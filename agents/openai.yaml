@@ -1,0 +1,7 @@
+interface:
+  display_name: "Deck Gen Pro"
+  short_description: "Staged professional deck workflow"
+  default_prompt: "Use $deck-gen-pro to turn my topic into a professional deck through staged research, style, outline, and build approvals."
+
+policy:
+  allow_implicit_invocation: true
