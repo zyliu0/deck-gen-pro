@@ -63,6 +63,37 @@ The first response should not be slides. It should be a plan-mode brief that res
 
 ## How It Works
 
+The workflow is intentionally gated. The agent pauses at each approval point so the user can correct the direction before the deck becomes expensive to change.
+
+```mermaid
+flowchart TD
+    A["User provides deck topic or brief"] --> B["Plan mode brief"]
+    B --> C{"Approve workflow?"}
+    C -- "Revise" --> B
+    C -- "Approve" --> D["Create workspace"]
+    D --> E["Material audit"]
+    E --> F{"Enough source material?"}
+    F -- "No or partial" --> G["Research and collect assets"]
+    G --> H{"Approve material base?"}
+    H -- "Revise" --> G
+    H -- "Approve" --> I["Visual style interview"]
+    F -- "Yes" --> I
+    I --> J{"Choose style?"}
+    J -- "Revise" --> I
+    J -- "Approve" --> K["Style reference images or comps"]
+    K --> L{"Approve visual direction?"}
+    L -- "Revise" --> K
+    L -- "Approve" --> M["Slide structure markdown"]
+    M --> N{"Approve slide flow?"}
+    N -- "Revise" --> M
+    N -- "Approve" --> O["Asset manifest and image assignment"]
+    O --> P["Deck build"]
+    P --> Q["Render previews and QA"]
+    Q --> R{"QA pass?"}
+    R -- "Fix issues" --> P
+    R -- "Pass" --> S["Final deck and QA summary"]
+```
+
 Deck Gen Pro follows this sequence:
 
 1. Initialize plan mode.
