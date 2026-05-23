@@ -14,6 +14,8 @@ The skill starts in plan mode, confirms each stage with the user, and only build
 - Collects missing facts, images, screenshots, and generated creative assets only when needed
 - Recommends visual styles from 10 professional deck systems
 - Creates style references before deck production
+- Reviews visual rhythm so image-led, text-led, diagram-led, data-led, and proof-led moments feel intentional
+- Distinguishes proof, mood, metaphor, texture, and generated visuals
 - Preserves visible style iterations for later comparison
 - Writes a slide-by-slide structure markdown file before building
 - Tracks every visual through an asset manifest
@@ -71,8 +73,8 @@ Deck Gen Pro keeps the process simple: understand the deck, choose a direction, 
 | 1. Plan | Restate the goal, audience, output format, and first step. | Approve the workflow before work begins. |
 | 2. Gather | Audit existing material, then research or collect assets only if needed. | Confirm the source material is enough. |
 | 3. Style | Recommend a visual direction and create a few reference images or comps. | Choose or revise the style. |
-| 4. Structure | Write the slide-by-slide markdown plan, including titles, proof, sources, and visuals. | Approve the slide flow before production. |
-| 5. Build | Create the deck, render previews, QA it, and fix issues. | Review the final deck and QA summary. |
+| 4. Structure | Write the slide-by-slide markdown plan, including titles, proof, sources, visuals, and visual rhythm. | Approve the slide flow before production. |
+| 5. Build | Create the deck, render previews, review the contact sheet, QA it, and fix issues. | Review the final deck and QA summary. |
 
 ## Workspace Artifacts
 

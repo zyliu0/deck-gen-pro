@@ -36,12 +36,23 @@ If the final deliverable is PPTX, HTML may still be useful for temporary visual 
 
 Use real images when the audience needs to inspect a real product, place, person, venue, brand, interface, chart, or screenshot. Download or screenshot source assets only when permitted and record provenance in `assets/asset-manifest.md`.
 
+Treat images by narrative role:
+
+- Proof: source-backed visuals that support factual claims.
+- Mood: visuals that establish brand world, category, or emotional tone.
+- Metaphor: visuals that help a conceptual slide become memorable.
+- Texture: subtle visual material that adds depth without distracting.
+- Generated: style-consistent visuals created when local assets are insufficient.
+
+Use local project visuals first when they are semantically and visually useful. Inspect images, video stills, PDFs, screenshots, and prior decks for crops, details, rooms, workflows, people, materials, and style traits that can become slide anchors or generation references.
+
 Use generated images when:
 
 - the topic is conceptual, speculative, creative, or fictional
 - no real visual exists
 - the user asks for a creative direction
 - the visual is a mood/reference comp, not factual evidence
+- a slide needs atmosphere, metaphor, category framing, or style continuity and local assets are insufficient
 
 Never use generated imagery to imply a real event, person, product state, venue, or metric.
 

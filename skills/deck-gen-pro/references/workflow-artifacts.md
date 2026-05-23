@@ -25,9 +25,9 @@ Required content:
 3. Recommend visual styles.
 4. Generate style reference images or comps.
 5. Write slide-structure markdown.
-6. Assign images through an asset manifest.
+6. Review visual rhythm and assign images through an asset manifest.
 7. Build the deck.
-8. Render and QA.
+8. Render, contact-sheet review, and QA.
 
 ## First Execution Step
 - What I will inspect first:
@@ -67,10 +67,17 @@ Required sections:
 - Likely narrative:
 - Likely proof objects:
 - Likely visual direction:
+- Likely visual roles:
+  - Proof:
+  - Mood:
+  - Metaphor:
+  - Texture:
+  - Generated-reference:
 
 ## Risks
 - Evidence risk:
 - Asset risk:
+- Visual rhythm risk:
 - Brand risk:
 - Timeline/tooling risk:
 
@@ -107,8 +114,8 @@ Required sections:
 |---|---|---|---|---|
 
 ## Visual Asset Candidates
-| Asset idea | Source/generation plan | Use case | Risk |
-|---|---|---|---|
+| Asset idea | Source/generation plan | Visual role | Use case | Risk |
+|---|---|---|---|---|
 
 ## Open Questions
 - 
@@ -156,6 +163,8 @@ Required sections:
 - Screenshot handling:
 - Photo crop handling:
 - Diagram/proof-object handling:
+- Visual rhythm principles:
+- Generated-image boundaries:
 
 ## Typography Behavior
 - Font weight and density:
@@ -175,6 +184,7 @@ Required sections:
 - Where captions should not appear:
 - How blank space should be handled:
 - How proof-object framing should work:
+- How mood, metaphor, and texture images differ from proof images:
 
 ## Reference Images Or Comps
 | Ref | Path/URL | What to borrow | What to avoid |
@@ -244,6 +254,8 @@ For every slide:
 - Narrative role: [context/tension/insight/proof/recommendation/close/appendix]
 - Audience takeaway: [what the viewer should remember]
 - Layout: [chosen style layout pattern]
+- Composition mode: [image-led/text-led/diagram-led/data-led/split image-text/full-bleed image with restrained text/proof-led/mostly negative space]
+- Visual rhythm intent: [why this slide should feel this way in the sequence]
 - Practical style rules:
   - Long-text handling:
   - Screenshot/caption handling:
@@ -259,9 +271,10 @@ For every slide:
 - Visual assets:
   - [asset_id or needed asset]
 - Image assignment:
-  - Role:
+  - Visual role: [proof/mood/metaphor/texture/category context/generated/none]
   - Crop/framing:
   - Multiple-image grid rules:
+  - Why image use or restraint is intentional:
 - Data/chart instructions:
   - Metric:
   - Unit:
@@ -273,6 +286,23 @@ For every slide:
   - One topic only:
   - Evidence present:
   - Image assigned:
+```
+
+Before production, add a deck-level pass:
+
+```markdown
+## Visual Rhythm Pass
+
+| Slide | Composition mode | Visual role | Balance note | Revision needed |
+|---|---|---|---|---|
+
+## Rhythm Judgment
+- Does the thumbnail sequence feel too text-heavy or card-heavy?
+- Are strong visual moments present where the story needs emotional pacing or category presence?
+- Are image-led slides clustered awkwardly or absent for too long?
+- Are proof images large enough to understand?
+- Are generated or atmospheric images clarifying the story rather than decorating it?
+- Which text-only slides are intentionally text-only?
 ```
 
 Stage gate question:
@@ -290,7 +320,7 @@ Required format:
 ```markdown
 # Asset Manifest
 
-| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Role | Fallback |
+| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fallback |
 |---|---|---|---|---|---|---|---|
 ```
 
@@ -299,6 +329,7 @@ Rules:
 - Use stable asset IDs such as `img-hero-venue-01`, `chart-market-02`, `logo-client-01`.
 - Separate downloaded, generated, screenshot, and user-provided assets.
 - Keep generated image prompts near the asset entry or in a linked prompt file.
+- Distinguish proof assets from mood, metaphor, texture, category-context, and generated assets.
 - Mark any asset that is not approved or has unclear usage.
 
 ## 05-build-notes.md
@@ -323,15 +354,31 @@ Include:
 
 - preview/contact sheet paths
 - factual QA notes
+- deck-level visual balance QA
 - visual QA notes
 - text overlap, overflow, and wrapping checks
 - spacing, padding, and margin consistency checks
 - typography behavior checks
 - image crop and caption relationship checks
 - image assignment QA
+- generated images are not treated as factual proof
 - user critique translated into style-rule updates
 - fixes made
 - remaining risks
+
+Deck-level visual balance QA should ask:
+
+```markdown
+## Deck-Level Visual Balance QA
+
+- Contact sheet reviewed:
+- Thumbnail sequence feels intentionally balanced:
+- Text-heavy or card-heavy stretches found:
+- Image-led moments checked for pacing:
+- Proof images large enough to understand:
+- Atmospheric/metaphor/generated visuals clarify the story:
+- Text-only slides are intentional:
+```
 
 ## archive/style-iterations/index.md
 

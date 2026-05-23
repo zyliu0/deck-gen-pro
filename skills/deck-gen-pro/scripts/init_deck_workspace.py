@@ -62,9 +62,9 @@ def main() -> int:
 3. Recommend visual styles.
 4. Generate style reference images or comps.
 5. Write slide-structure markdown.
-6. Assign images through an asset manifest.
+6. Review visual rhythm and assign images through an asset manifest.
 7. Build the deck.
-8. Render and QA.
+8. Render, contact-sheet review, and QA.
 
 ## First Execution Step
 - What I will inspect first:
@@ -94,10 +94,17 @@ def main() -> int:
 - Likely narrative:
 - Likely proof objects:
 - Likely visual direction:
+- Likely visual roles:
+  - Proof:
+  - Mood:
+  - Metaphor:
+  - Texture:
+  - Generated-reference:
 
 ## Risks
 - Evidence risk:
 - Asset risk:
+- Visual rhythm risk:
 - Brand risk:
 - Timeline/tooling risk:
 
@@ -124,8 +131,8 @@ next-stage:
 |---|---|---|---|---|
 
 ## Visual Asset Candidates
-| Asset idea | Source/generation plan | Use case | Risk |
-|---|---|---|---|
+| Asset idea | Source/generation plan | Visual role | Use case | Risk |
+|---|---|---|---|---|
 
 ## Open Questions
 - 
@@ -163,6 +170,8 @@ next-stage:
 - Screenshot handling:
 - Photo crop handling:
 - Diagram/proof-object handling:
+- Visual rhythm principles:
+- Generated-image boundaries:
 
 ## Typography Behavior
 - Font weight and density:
@@ -182,6 +191,7 @@ next-stage:
 - Where captions should not appear:
 - How blank space should be handled:
 - How proof-object framing should work:
+- How mood, metaphor, and texture images differ from proof images:
 
 ## Reference Images Or Comps
 | Ref | Path/URL | What to borrow | What to avoid |
@@ -235,6 +245,8 @@ next-stage:
 - Narrative role:
 - Audience takeaway:
 - Layout:
+- Composition mode:
+- Visual rhythm intent:
 - Practical style rules:
   - Long-text handling:
   - Screenshot/caption handling:
@@ -250,9 +262,10 @@ next-stage:
 - Visual assets:
   - 
 - Image assignment:
-  - Role:
+  - Visual role:
   - Crop/framing:
   - Multiple-image grid rules:
+  - Why image use or restraint is intentional:
 - Data/chart instructions:
   - Metric:
   - Unit:
@@ -264,6 +277,19 @@ next-stage:
   - One topic only:
   - Evidence present:
   - Image assigned:
+
+## Visual Rhythm Pass
+
+| Slide | Composition mode | Visual role | Balance note | Revision needed |
+|---|---|---|---|---|
+
+## Rhythm Judgment
+- Does the thumbnail sequence feel too text-heavy or card-heavy?
+- Are strong visual moments present where the story needs emotional pacing or category presence?
+- Are image-led slides clustered awkwardly or absent for too long?
+- Are proof images large enough to understand?
+- Are generated or atmospheric images clarifying the story rather than decorating it?
+- Which text-only slides are intentionally text-only?
 """,
     )
 
@@ -271,7 +297,7 @@ next-stage:
         workspace / "assets" / "asset-manifest.md",
         """# Asset Manifest
 
-| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Role | Fallback |
+| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fallback |
 |---|---|---|---|---|---|---|---|
 """,
     )
@@ -304,6 +330,16 @@ next-stage:
 
 ## Factual QA
 
+## Deck-Level Visual Balance QA
+
+- Contact sheet reviewed:
+- Thumbnail sequence feels intentionally balanced:
+- Text-heavy or card-heavy stretches found:
+- Image-led moments checked for pacing:
+- Proof images large enough to understand:
+- Atmospheric/metaphor/generated visuals clarify the story:
+- Text-only slides are intentional:
+
 ## Visual QA
 
 - Text overlap, overflow, and wrapping checks:
@@ -312,6 +348,9 @@ next-stage:
 - Image crop and caption relationship checks:
 
 ## Image Assignment QA
+
+- Visual roles are correctly labeled:
+- Generated images are not treated as factual proof:
 
 ## User Critique Applied To Style Rules
 

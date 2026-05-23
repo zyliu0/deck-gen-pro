@@ -22,7 +22,9 @@ This skill orchestrates the host agent's available deck tools. Prefer an editabl
 - Each slide must have one clear topic, one role in the story, and a logical connection to adjacent slides.
 - Each slide must have an obvious title that states the point, not a vague label.
 - Assign images systematically with an asset manifest before building slides.
+- Review the deck as a viewed sequence before building; text-led, image-led, diagram-led, data-led, and proof-led moments should feel intentional.
 - Generate or download images only when the deck structure says why that image is needed.
+- Do not use generated images as factual proof of real products, teams, customers, facilities, events, metrics, or claims unless explicitly grounded in source material.
 - Prefer editable PPTX for final professional deliverables unless the user requests Canva, HTML, PDF, or another format.
 
 ## Design Judgment Rules
@@ -34,6 +36,9 @@ Apply these rules throughout style exploration and deck production. They are jud
 - Account for font behavior. Serif faces, CJK typefaces, display titles, and dense labels can wrap, feel heavier, shift baselines, or overflow differently than expected. Adjust hierarchy, line breaks, and copy length to protect readability and elegance.
 - Keep on-slide text economical. If a card, chart, or diagram needs cramped copy, simplify the visible phrase and move nuance into speaker notes, research notes, or supporting markdown instead of shrinking text until the layout becomes fragile.
 - Treat screenshots and photos as proof objects. Crop them deliberately, keep important content visible, and align captions to the image or card system. Captions should not float arbitrarily, sit over important visual content, or create blank holding areas.
+- Treat visuals as narrative tools, not only evidence. A visual may serve as proof, mood, metaphor, category context, product texture, or emotional pacing. Text-only slides are valid when intentional; they should not be the default for every conceptual slide.
+- Use local multimodal material creatively before searching or generating: inspect images, videos, PDFs, screenshots, logos, prior decks, and still frames for motifs, crops, textures, rooms, people, workflows, product details, and category cues that can become slide anchors.
+- Permit generated images when local material is insufficient and the approved style direction is clear. Generated images are appropriate for atmosphere, metaphor, category framing, abstract concepts, and style-consistent continuity; keep their role distinct from factual evidence.
 - Preserve visible iterations when exploring multiple directions. Save prior comps or rendered slide previews in an archive folder with a short index so the user can compare earlier directions later.
 - Treat user critique as a design-system signal when appropriate. Feedback about padding, overflow, captions, hierarchy, image crop, or awkward empty space should update the style rules before more slides are generated, not just patch one local object.
 
@@ -81,11 +86,14 @@ Use the generated folder for all notes, research, assets, style references, stru
 
 Inspect the working environment before researching. Look for user-provided files, existing notes, brand assets, previous decks, source documents, datasets, screenshots, images, and URLs.
 
+Inspect visual material as visual material, not only as evidence. For images, videos, PDFs, screenshots, logos, and prior decks, note usable motifs, potential crops, textures, people, rooms, workflows, product details, brand cues, and moments that could become image-led anchors or generated-image references.
+
 Write `01-material-audit.md` with:
 
 - available sources and assets
 - missing information
 - likely deck audience and purpose
+- likely visual material roles: proof, mood, metaphor, texture, generated-reference, or unused
 - risks such as weak evidence, no visuals, unclear brand, or missing metrics
 - decision: `enough-material: yes/no/partial`
 
@@ -101,7 +109,7 @@ Write `02-research-notes.md` and `assets/asset-manifest.md`. Capture:
 - facts and metrics with provenance
 - downloaded images/screenshots and allowed usage constraints when known
 - generated image prompts and outputs, if creative imagery is appropriate
-- asset-to-slide candidates, even before the final slide structure is locked
+- asset-to-slide candidates and likely visual roles, even before the final slide structure is locked
 
 Ask the user to approve the material base before recommending visual styles.
 
@@ -127,6 +135,8 @@ Write `03-style-direction.md` with:
 - typography behavior notes, including wrap risk, visual weight, and hierarchy adjustments
 - text economy rules for cards, diagrams, long titles, and speaker-note overflow
 - image and caption rules for screenshots, photos, crops, cards, and blank space
+- visual rhythm principles for when the deck should become image-led, text-led, diagram-led, data-led, proof-led, or quiet
+- generated-image boundaries, including when generated visuals are allowed and how they will be kept separate from proof
 - reference-image prompts or source screenshots
 - rendered-output QA notes and fixes made before presentation
 - what the user approved or rejected
@@ -147,15 +157,21 @@ For each slide, specify:
 - slide number and topic
 - claim/title
 - narrative role
+- composition mode: image-led, text-led, diagram-led, data-led, split image/text, full-bleed image with restrained text, proof-led, or mostly negative space
 - body text hierarchy
 - proof object: chart, image, table, quote, diagram, comparison, timeline, or big-number callout
 - exact source references for factual claims
 - image requirements and asset IDs from `asset-manifest.md`
+- visual role for each asset: proof, mood, metaphor, texture, generated, or none
 - layout notes from the chosen style
 
 Ask the user to approve or revise the structure. Do not build slides before approval.
 
-### 7. Image Assignment Pass
+### 7. Visual Rhythm And Image Assignment Pass
+
+Before building, review the approved slide structure as thumbnails-in-your-head or rendered planning thumbnails if available. Describe the role of each slide in the sequence: text-led, image-led, diagram-led, data-led, proof-led, split image/text, full-bleed image with restrained text, or mostly negative space.
+
+Judge the rhythm without quotas. Ask whether the audience will experience enough visual variety, emotional pacing, and visual proof for the story. If too many neighboring slides feel text-forward or card-heavy, consider a stronger local image crop, a dominant image treatment, a simpler text hierarchy, or a generated visual that follows the approved style direction. If a slide has no image, record why that restraint is intentional.
 
 Write or update `assets/asset-manifest.md` so every visual asset has:
 
@@ -165,9 +181,10 @@ Write or update `assets/asset-manifest.md` so every visual asset has:
 - quality notes
 - intended slide(s)
 - crop/layout role
+- narrative role: proof, mood, metaphor, texture, category context, generated-reference, or generated-final
 - fallback plan if the asset fails QA
 
-For slides with multiple images, define grid rules and image hierarchy. Avoid decorative images that do not prove or clarify the slide topic.
+For slides with multiple images, define grid rules and image hierarchy. Avoid decorative images that do not prove, clarify, pace, or emotionally frame the slide topic. If using generated imagery, record the prompt or generation source and keep it labeled internally so it cannot be confused with real-world proof.
 
 ### 8. Deck Build
 
@@ -184,10 +201,15 @@ Render the deck to preview images or a contact sheet. Check:
 - story flow and slide topic uniqueness
 - factual accuracy and source coverage
 - title clarity
+- deck-level visual rhythm and thumbnail balance
+- whether the sequence feels too text-heavy, visually monotonous, or card-heavy
+- whether image-led moments are missing for long stretches or clustered awkwardly
 - visual hierarchy and contrast
 - text overflow and spacing
 - chart readability
 - image quality, crop, and correct slide assignment
+- whether proof images are large enough to be understood
+- whether atmospheric, metaphorical, or generated visuals clarify the story instead of merely decorating it
 - consistency with the approved style direction
 - whether user critiques have been promoted into updated style rules when they affect the system
 
