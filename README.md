@@ -63,49 +63,15 @@ The first response should not be slides. It should be a plan-mode brief that res
 
 ## How It Works
 
-The workflow is intentionally gated. The agent pauses at each approval point so the user can correct the direction before the deck becomes expensive to change.
+Deck Gen Pro keeps the process simple: understand the deck, choose a direction, outline the story, then build.
 
-```mermaid
-flowchart TD
-    A["User provides deck topic or brief"] --> B["Plan mode brief"]
-    B --> C{"Approve workflow?"}
-    C -- "Revise" --> B
-    C -- "Approve" --> D["Create workspace"]
-    D --> E["Material audit"]
-    E --> F{"Enough source material?"}
-    F -- "No or partial" --> G["Research and collect assets"]
-    G --> H{"Approve material base?"}
-    H -- "Revise" --> G
-    H -- "Approve" --> I["Visual style interview"]
-    F -- "Yes" --> I
-    I --> J{"Choose style?"}
-    J -- "Revise" --> I
-    J -- "Approve" --> K["Style reference images or comps"]
-    K --> L{"Approve visual direction?"}
-    L -- "Revise" --> K
-    L -- "Approve" --> M["Slide structure markdown"]
-    M --> N{"Approve slide flow?"}
-    N -- "Revise" --> M
-    N -- "Approve" --> O["Asset manifest and image assignment"]
-    O --> P["Deck build"]
-    P --> Q["Render previews and QA"]
-    Q --> R{"QA pass?"}
-    R -- "Fix issues" --> P
-    R -- "Pass" --> S["Final deck and QA summary"]
-```
-
-Deck Gen Pro follows this sequence:
-
-1. Initialize plan mode.
-2. Create a deck workspace.
-3. Audit available material.
-4. Research or collect missing material.
-5. Interview for visual style.
-6. Create style reference images or comps.
-7. Write the slide structure markdown.
-8. Assign images and other visuals through an asset manifest.
-9. Build the deck in the best available output format.
-10. Render, QA, fix, and review.
+| Phase | What Happens | User Checkpoint |
+|---|---|---|
+| 1. Plan | Restate the goal, audience, output format, and first step. | Approve the workflow before work begins. |
+| 2. Gather | Audit existing material, then research or collect assets only if needed. | Confirm the source material is enough. |
+| 3. Style | Recommend a visual direction and create a few reference images or comps. | Choose or revise the style. |
+| 4. Structure | Write the slide-by-slide markdown plan, including titles, proof, sources, and visuals. | Approve the slide flow before production. |
+| 5. Build | Create the deck, render previews, QA it, and fix issues. | Review the final deck and QA summary. |
 
 ## Workspace Artifacts
 
