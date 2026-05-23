@@ -6,15 +6,15 @@ Use this file to decide the final production format and supporting tools.
 
 Default to editable PPTX when the user asks for a professional deck, pitch deck, board deck, sales deck, strategy deck, report deck, or presentation. A final PPTX is the most useful default because business users can edit, share, present, and reuse it.
 
-Use the installed `Presentations` skill for high-polish artifact-tool presentation JSX builds. If any `.pptx` file is read, edited, created, converted, or used as a template, also use the installed `pptx` skill.
+Use the host environment's best PPTX-capable presentation workflow for high-polish editable builds. If any `.pptx` file is read, edited, created, converted, or used as a template, use the most reliable available PPTX reader/editor and preserve editability whenever possible.
 
 ## Format Router
 
 | User need | Best output | Notes |
 |---|---|---|
-| Editable business deck | PPTX | Use artifact-tool through `Presentations`; render previews before final. |
+| Editable business deck | PPTX | Use the best available PPTX-capable builder; render previews before final. |
 | Existing template/source deck | PPTX clone/edit | Preserve typography, layout, and brand chrome; do not rebuild from blank unless required. |
-| Branded Canva workflow | Canva | Use Canva skills; create candidates and ask user before final design. |
+| Branded Canva workflow | Canva | Use Canva or an equivalent design-platform connector; create candidates and ask user before final design. |
 | Web-native interactive slides | HTML/React | Use only when user wants browser delivery, animation, scrolling, or interactive elements. |
 | Static review artifact | PDF | Export after editable source exists unless user only needs PDF. |
 | Style exploration only | Images/comps | Generate reference images or screenshots; do not treat them as final deck. |
@@ -58,12 +58,12 @@ Every chart slide needs:
 - annotation that explains the point
 - readable labels at presentation size
 
-## Installed Skill Coordination
+## Tool Coordination
 
-- `Presentations`: final high-polish editable PPTX build, previews, contact sheets, QA.
-- `pptx`: any `.pptx` read/edit/create/convert workflow.
-- `canva-branded-presentation`: Canva-specific generation with brand kits and candidate selection.
-- `imagegen`: generated style references or creative imagery.
+- Presentation/PPTX tools: final high-polish editable deck build, previews, contact sheets, QA.
+- Template or PPTX parsers/editors: any `.pptx` read/edit/create/convert workflow.
+- Canva or design-platform connectors: brand-kit workflows and candidate generation when requested.
+- Image-generation tools: generated style references or creative imagery.
 - Browser/web tools: current research, source verification, screenshots, image sourcing.
 
-Load only the skill needed for the current stage. Keep `deck-gen-pro` as the process controller and the other skill as the production tool.
+Load only the tool or supporting skill needed for the current stage. Keep `deck-gen-pro` as the process controller and use other tools as production tools.

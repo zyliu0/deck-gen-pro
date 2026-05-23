@@ -9,7 +9,7 @@ description: Professional staged deck-making workflow for creating, planning, or
 
 Use this skill to make professional decks slowly and deliberately. The first action is to enter or initialize plan mode. Do not start by generating slides. Move through gated stages: plan-mode brief, material audit, research and asset gathering, style interview, style references, slide-structure markdown, final deck production, and QA.
 
-This skill orchestrates other deck tools. Use the installed `Presentations` skill for editable artifact-tool PPTX builds, `pptx` when a `.pptx` file is touched, Canva skills when the user explicitly wants Canva, and browser/image tools for research, screenshots, downloaded source assets, or generated reference imagery.
+This skill orchestrates the host agent's available deck tools. Prefer an editable PPTX-capable workflow for professional deliverables, use template-preserving presentation tools when a source deck is supplied, use Canva or another design platform only when requested, and use browser, file, screenshot, research, and image-generation tools when they are available and relevant.
 
 ## Non-Negotiables
 
@@ -22,7 +22,7 @@ This skill orchestrates other deck tools. Use the installed `Presentations` skil
 - Each slide must have an obvious title that states the point, not a vague label.
 - Assign images systematically with an asset manifest before building slides.
 - Generate or download images only when the deck structure says why that image is needed.
-- Prefer editable PPTX via artifact-tool for final professional deliverables unless the user requests Canva, HTML, PDF, or another format.
+- Prefer editable PPTX for final professional deliverables unless the user requests Canva, HTML, PDF, or another format.
 
 ## Stage-Gated Workflow
 
@@ -137,7 +137,7 @@ For slides with multiple images, define grid rules and image hierarchy. Avoid de
 
 Choose output format using `references/tooling-and-output.md`.
 
-Default to editable PPTX through the installed `Presentations` skill. Use generated slide code or artifact-tool presentation JSX as appropriate for the current environment. If the user requested a source/template deck, route to template-following and preserve the template structure. If Canva is requested, use Canva skills and generate candidates before creating the final deck.
+Default to editable PPTX through the best available presentation toolchain. Use generated slide code, a presentation SDK, a native slide editor, or a platform-specific deck tool as appropriate for the current environment. If the user requested a source/template deck, route to template-following and preserve the template structure. If Canva or another design platform is requested, generate candidates and ask the user before creating the final deck.
 
 Build only after the material, style, structure, and image assignment stages are approved.
 
@@ -160,7 +160,7 @@ Fix issues, rerender affected slides, and ask for final user review.
 
 - `references/style-systems.md`: 10 reusable visual style systems inspired by modern professional template galleries and presentation design guidance.
 - `references/workflow-artifacts.md`: required markdown artifacts and schemas for the slow deck workflow.
-- `references/tooling-and-output.md`: when to use PPTX, Canva, HTML, PDF, images, and installed deck skills.
+- `references/tooling-and-output.md`: when to use PPTX, Canva, HTML, PDF, images, and supporting deck tools.
 
 ## Completion Standard
 

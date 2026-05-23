@@ -1,118 +1,90 @@
 # Deck Gen Pro
 
-Deck Gen Pro is a Codex skill for making professional slide decks slowly, with deliberate approval gates. It is designed for deck work where the story, evidence, visual system, and image choices matter more than getting a pile of slides on the first try.
+Deck Gen Pro is an agent skill for creating professional presentation decks through a slow, staged workflow. It is built for moments where the story, evidence, visual direction, and image choices matter too much for one-shot slide generation.
 
-Instead of generating slides immediately, the skill first initializes the work in plan mode, then guides the agent through material audit, research, visual style selection, reference comps, slide-structure planning, image assignment, production, and QA.
+The skill starts in plan mode, confirms each stage with the user, and only builds slides after the material base, style direction, slide structure, and asset assignments are approved.
 
-## What It Does
+> [!NOTE]
+> This is a platform-neutral Agent Skill. Install it with the `skills` CLI or copy `skills/deck-gen-pro` into any agent skill directory that supports `SKILL.md`.
 
-Deck Gen Pro turns a deck request into a staged workflow:
+## Features
 
-1. Enter or initialize plan mode before execution.
-2. Audit the local working environment for source material, brand assets, notes, data, images, and prior decks.
-3. Research or collect missing source material when the local environment is not enough.
-4. Interview the user on visual direction using curated professional style systems.
-5. Generate or collect style reference images before building slides.
-6. Write a slide-structure markdown file that maps every slide topic, title, proof object, source, and image.
-7. Assign images through an asset manifest so visuals are intentional and traceable.
-8. Build the deck only after the material, style, structure, and image plan are approved.
-9. Render and QA the output before calling it finished.
+- Starts every deck project in plan mode before execution
+- Audits local source material before researching
+- Collects missing facts, images, screenshots, and generated creative assets only when needed
+- Recommends visual styles from 10 professional deck systems
+- Creates style references before deck production
+- Writes a slide-by-slide structure markdown file before building
+- Tracks every visual through an asset manifest
+- Defaults to editable PPTX while supporting Canva, HTML, PDF, and image comps when requested
+- Keeps QA notes for story flow, factual accuracy, layout, chart readability, and image assignment
 
-The default final deliverable is an editable PowerPoint deck, but the skill can route to Canva, HTML, PDF, image comps, or other formats when the user asks for them.
+## Installation
 
-## Why This Exists
+Install directly from GitHub:
 
-Most AI deck generation workflows fail in the same way: they start making slides before they understand the topic. Deck Gen Pro treats slide generation as the last step, not the first one.
+```bash
+npx skills add https://github.com/zyliu0/deck-gen-pro
+```
 
-The skill is built around three principles:
+Install from the direct skill path:
 
-- Story before slides.
-- Evidence before claims.
-- Style before production.
-- Plan mode before execution.
+```bash
+npx skills add https://github.com/zyliu0/deck-gen-pro/tree/main/skills/deck-gen-pro
+```
 
-That makes it useful for investor decks, board updates, strategy decks, sales decks, research presentations, creative pitches, product narratives, and image-led decks where asset quality matters.
+Install non-interactively for a specific agent:
 
-## Project Structure
+```bash
+npx skills add https://github.com/zyliu0/deck-gen-pro --skill deck-gen-pro --agent universal -y
+```
+
+Install globally:
+
+```bash
+npx skills add https://github.com/zyliu0/deck-gen-pro --skill deck-gen-pro --agent universal --global -y
+```
+
+List the skills exposed by this repository:
+
+```bash
+npx skills add https://github.com/zyliu0/deck-gen-pro --list
+```
+
+## Usage
+
+Ask your coding agent to use the skill:
 
 ```text
-deck-gen-pro/
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-├── references/
-│   ├── style-systems.md
-│   ├── tooling-and-output.md
-│   └── workflow-artifacts.md
-└── scripts/
-    └── init_deck_workspace.py
+Use deck-gen-pro to create a board update deck for our Q2 operating review.
 ```
 
-## Files
+The first response should not be slides. It should be a plan-mode brief that restates the goal, names the staged workflow, identifies what the agent needs to inspect first, and asks for approval before creating files, researching, generating references, or building slides.
 
-| File | Purpose |
-|---|---|
-| `SKILL.md` | Main skill workflow and trigger description. |
-| `agents/openai.yaml` | UI metadata for Codex skill lists and default prompt insertion. |
-| `references/style-systems.md` | Ten visual style systems for the style interview stage. |
-| `references/workflow-artifacts.md` | Markdown schemas for material audit, research notes, style direction, slide structure, asset manifest, build notes, and QA notes. |
-| `references/tooling-and-output.md` | Output-format router for PPTX, Canva, HTML, PDF, image comps, and supporting tools. |
-| `scripts/init_deck_workspace.py` | Helper that creates a staged deck workspace with all required markdown artifacts. |
+## How It Works
 
-## Style Systems
+Deck Gen Pro follows this sequence:
 
-The skill includes ten reusable visual directions:
+1. Initialize plan mode.
+2. Create a deck workspace.
+3. Audit available material.
+4. Research or collect missing material.
+5. Interview for visual style.
+6. Create style reference images or comps.
+7. Write the slide structure markdown.
+8. Assign images and other visuals through an asset manifest.
+9. Build the deck in the best available output format.
+10. Render, QA, fix, and review.
 
-1. Editorial Strategy
-2. Founder Pitch Minimal
-3. Premium Brand Monochrome
-4. Data Room Executive
-5. Product System Blueprint
-6. Research Lab
-7. Creative Campaign Pop
-8. Consultancy Clarity
-9. Immersive Place Story
-10. Workshop Canvas
+## Workspace Artifacts
 
-These are not rigid templates. They are decision aids for choosing layout rhythm, palette, typography, chart treatment, and image direction before production starts.
-
-## Install
-
-Place this folder in a Codex-readable skills directory, such as:
+The helper script creates the markdown files used to keep the process inspectable:
 
 ```bash
-~/.codex/skills/deck-gen-pro
+python3 skills/deck-gen-pro/scripts/init_deck_workspace.py "AI platform investor deck" --root outputs
 ```
 
-or:
-
-```bash
-~/.agents/skills/deck-gen-pro
-```
-
-Then restart or reload Codex so the skill index can pick it up.
-
-## Use
-
-Invoke the skill when asking for a deck:
-
-```text
-Use $deck-gen-pro to make an investor deck for my AI workflow product.
-```
-
-The skill should not immediately create slides. After plan-mode approval, it should start by auditing available material and asking for confirmation before moving to the next stage.
-
-The first action should be to enter or initialize plan mode. In plan mode, the agent restates the deck goal, names the staged workflow, identifies what it needs to inspect, and asks for approval before creating files, researching, generating references, or building slides.
-
-## Create A Deck Workspace
-
-The helper script creates the markdown files used during the staged process:
-
-```bash
-python3 scripts/init_deck_workspace.py "AI platform investor deck" --root outputs
-```
-
-It creates a timestamped folder containing:
+Generated workspace:
 
 ```text
 00-plan-mode-brief.md
@@ -130,61 +102,61 @@ qa/
 output/
 ```
 
-Use this workspace as the working record for one deck project.
+## Included Style Systems
 
-## Workflow Artifacts
+Deck Gen Pro includes 10 style systems for the visual interview stage:
 
-The skill depends on explicit planning artifacts:
-
-| Artifact | Role |
+| Style | Best for |
 |---|---|
-| `00-plan-mode-brief.md` | Records the approved plan-mode starting point once execution begins. |
-| `01-material-audit.md` | Decides whether the available source material is enough. |
-| `02-research-notes.md` | Records source-backed facts, links, visual candidates, and open questions. |
-| `03-style-direction.md` | Captures the selected visual system and approved reference comps. |
-| `04-slide-structure.md` | Defines each slide's topic, claim, proof object, source, layout, and visual assignment. |
-| `assets/asset-manifest.md` | Tracks every image, screenshot, chart, logo, generated visual, and fallback. |
-| `05-build-notes.md` | Records output format, toolchain, fonts, source mapping, and final path. |
-| `06-qa-notes.md` | Records story, factual, visual, and image-assignment QA. |
+| Editorial Strategy | Strategy narratives, market maps, thought leadership |
+| Founder Pitch Minimal | Startup fundraising and product vision |
+| Premium Brand Monochrome | Luxury, fashion, portfolio, architecture |
+| Data Room Executive | Finance, board, analytics, market sizing |
+| Product System Blueprint | SaaS, AI, developer tools, platform decks |
+| Research Lab | Academic, science, policy, UX research |
+| Creative Campaign Pop | Marketing, creator, entertainment, social launches |
+| Consultancy Clarity | Proposals, transformation, recommendations |
+| Immersive Place Story | Travel, real estate, hospitality, venues |
+| Workshop Canvas | Training, facilitation, design sprints |
 
-## Output Guidance
+## Repository Layout
 
-Deck Gen Pro defaults to editable PPTX because most business decks need to be edited, shared, and reused. It routes to other formats when the user asks:
-
-| Need | Output |
-|---|---|
-| Editable business deck | PPTX |
-| Existing template/source deck | PPTX clone/edit |
-| Branded Canva workflow | Canva |
-| Interactive web-native slides | HTML/React |
-| Static review artifact | PDF |
-| Style exploration | Images or comps |
-| Social/carousel adaptation | PNG/PDF plus source |
-
-## Verify
-
-Run the Python syntax check:
-
-```bash
-python3 -m py_compile scripts/init_deck_workspace.py
+```text
+deck-gen-pro/
+├── README.md
+└── skills/
+    └── deck-gen-pro/
+        ├── SKILL.md
+        ├── references/
+        │   ├── style-systems.md
+        │   ├── tooling-and-output.md
+        │   └── workflow-artifacts.md
+        └── scripts/
+            └── init_deck_workspace.py
 ```
 
-Create a temporary sample workspace:
+The installable skill is `skills/deck-gen-pro/`.
+
+## Verification
+
+Check the helper script:
 
 ```bash
-python3 scripts/init_deck_workspace.py "sample deck" --root /tmp/deck-gen-pro-test
+python3 -m py_compile skills/deck-gen-pro/scripts/init_deck_workspace.py
 ```
 
-If you have Codex's system skill validator available, validate the skill folder:
+Create a sample workspace:
 
 ```bash
-python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+python3 skills/deck-gen-pro/scripts/init_deck_workspace.py "sample deck" --root /tmp/deck-gen-pro-test
 ```
 
-## Public Repo Notes
+Check that the `skills` CLI can discover the package:
 
-Generated deck workspaces are ignored by default through `outputs/`. Keep user source files, research downloads, generated images, and private deck outputs out of the public repository unless they are intentionally shareable.
+```bash
+npx skills add . --list
+```
 
-## License
+## Notes
 
-No license has been added yet. Add one before treating this as an open-source project.
+Generated deck workspaces are ignored through `outputs/`. Keep private source files, research downloads, generated images, and client deck outputs out of the public repository unless they are intentionally shareable.

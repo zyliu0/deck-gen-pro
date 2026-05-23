@@ -8,6 +8,12 @@ __pycache__/
 # Generated deck workspaces and deliverables
 outputs/
 
+# Local skill installation targets used during testing
+.agents/
+.codebuddy/
+.claude/
+.codex/
+
 # Local/editor state
 .idea/
 .vscode/
