@@ -122,7 +122,7 @@ I have enough source material to proceed. The main evidence base is [summary]. T
 
 ## 03-style-direction.md
 
-Purpose: record the selected style and reference-image/composition approval.
+Purpose: record the selected style, practical layout rules, rendered comp QA, and reference-image/composition approval.
 
 Required sections:
 
@@ -146,8 +146,51 @@ Required sections:
 - Image treatment:
 - Accent rules:
 
+## Practical Layout Rules
+- Spacing system:
+- Card interiors:
+- Outer margins and object gaps:
+- Title and subtitle behavior:
+- Caption placement:
+- Long-text handling:
+- Screenshot handling:
+- Photo crop handling:
+- Diagram/proof-object handling:
+
+## Typography Behavior
+- Font weight and density:
+- Wrap risks:
+- CJK or multilingual risks:
+- Baseline/overflow risks:
+- Hierarchy adjustments:
+
+## Text Economy Rules
+- On-slide copy limit principles:
+- What moves to speaker notes:
+- What moves to supporting markdown:
+- When to simplify a card or diagram:
+
+## Image And Caption Rules
+- How captions align to images/cards:
+- Where captions should not appear:
+- How blank space should be handled:
+- How proof-object framing should work:
+
 ## Reference Images Or Comps
 | Ref | Path/URL | What to borrow | What to avoid |
+|---|---|---|---|
+
+## Visual QA Before Approval
+- Rendered output inspected:
+- Text overlap/overflow fixed:
+- Spacing and padding consistency checked:
+- Caption/image relationship checked:
+- Hierarchy checked:
+- Awkward empty space checked:
+- Fixes made:
+
+## Iteration Archive
+| Iteration | Path | What changed | Why it changed |
 |---|---|---|---|
 
 ## Application Rules
@@ -161,8 +204,10 @@ Required sections:
 Stage gate question:
 
 ```text
-I have prepared the style direction and reference comps. Does this feel like the right deck style, or should I revise the visual system before outlining slides?
+I have prepared the style direction, layout rules, reference comps, and visual QA notes. Does this feel like the right deck style, or should I revise the visual system before outlining slides?
 ```
+
+Do not proceed to slide-structure generation until this file includes both visual mood rules and practical layout rules for long text, screenshots, captions, cards, diagrams, and proof objects.
 
 ## 04-slide-structure.md
 
@@ -199,6 +244,10 @@ For every slide:
 - Narrative role: [context/tension/insight/proof/recommendation/close/appendix]
 - Audience takeaway: [what the viewer should remember]
 - Layout: [chosen style layout pattern]
+- Practical style rules:
+  - Long-text handling:
+  - Screenshot/caption handling:
+  - Card/proof-object handling:
 - Text hierarchy:
   - Title:
   - Primary copy:
@@ -275,6 +324,30 @@ Include:
 - preview/contact sheet paths
 - factual QA notes
 - visual QA notes
+- text overlap, overflow, and wrapping checks
+- spacing, padding, and margin consistency checks
+- typography behavior checks
+- image crop and caption relationship checks
 - image assignment QA
+- user critique translated into style-rule updates
 - fixes made
 - remaining risks
+
+## archive/style-iterations/index.md
+
+Purpose: preserve visible iterations so earlier directions can be compared later.
+
+Required format:
+
+```markdown
+# Style Iteration Archive
+
+| Iteration | Date | Path | Summary | User/design signal |
+|---|---:|---|---|---|
+```
+
+Rules:
+
+- Save visible style comps or rendered previews when exploring multiple directions.
+- Add a short index entry for each direction or meaningful revision.
+- If user critique reveals a system-level issue, describe the updated style rule in the index or link to `03-style-direction.md`.

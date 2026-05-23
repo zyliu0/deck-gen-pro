@@ -14,6 +14,7 @@ The skill starts in plan mode, confirms each stage with the user, and only build
 - Collects missing facts, images, screenshots, and generated creative assets only when needed
 - Recommends visual styles from 10 professional deck systems
 - Creates style references before deck production
+- Preserves visible style iterations for later comparison
 - Writes a slide-by-slide structure markdown file before building
 - Tracks every visual through an asset manifest
 - Defaults to editable PPTX while supporting Canva, HTML, PDF, and image comps when requested
@@ -94,6 +95,7 @@ Generated workspace:
 assets/asset-manifest.md
 assets/source/
 assets/generated/
+archive/style-iterations/index.md
 previews/
 qa/
 output/

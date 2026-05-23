@@ -37,6 +37,8 @@ def main() -> int:
         workspace / "assets",
         workspace / "assets" / "source",
         workspace / "assets" / "generated",
+        workspace / "archive",
+        workspace / "archive" / "style-iterations",
         workspace / "references",
         workspace / "previews",
         workspace / "qa",
@@ -151,8 +153,51 @@ next-stage:
 - Image treatment:
 - Accent rules:
 
+## Practical Layout Rules
+- Spacing system:
+- Card interiors:
+- Outer margins and object gaps:
+- Title and subtitle behavior:
+- Caption placement:
+- Long-text handling:
+- Screenshot handling:
+- Photo crop handling:
+- Diagram/proof-object handling:
+
+## Typography Behavior
+- Font weight and density:
+- Wrap risks:
+- CJK or multilingual risks:
+- Baseline/overflow risks:
+- Hierarchy adjustments:
+
+## Text Economy Rules
+- On-slide copy limit principles:
+- What moves to speaker notes:
+- What moves to supporting markdown:
+- When to simplify a card or diagram:
+
+## Image And Caption Rules
+- How captions align to images/cards:
+- Where captions should not appear:
+- How blank space should be handled:
+- How proof-object framing should work:
+
 ## Reference Images Or Comps
 | Ref | Path/URL | What to borrow | What to avoid |
+|---|---|---|---|
+
+## Visual QA Before Approval
+- Rendered output inspected:
+- Text overlap/overflow fixed:
+- Spacing and padding consistency checked:
+- Caption/image relationship checked:
+- Hierarchy checked:
+- Awkward empty space checked:
+- Fixes made:
+
+## Iteration Archive
+| Iteration | Path | What changed | Why it changed |
 |---|---|---|---|
 
 ## Application Rules
@@ -190,6 +235,10 @@ next-stage:
 - Narrative role:
 - Audience takeaway:
 - Layout:
+- Practical style rules:
+  - Long-text handling:
+  - Screenshot/caption handling:
+  - Card/proof-object handling:
 - Text hierarchy:
   - Title:
   - Primary copy:
@@ -257,11 +306,27 @@ next-stage:
 
 ## Visual QA
 
+- Text overlap, overflow, and wrapping checks:
+- Spacing, padding, and margin consistency checks:
+- Typography behavior checks:
+- Image crop and caption relationship checks:
+
 ## Image Assignment QA
+
+## User Critique Applied To Style Rules
 
 ## Fixes Made
 
 ## Remaining Risks
+""",
+    )
+
+    write_if_missing(
+        workspace / "archive" / "style-iterations" / "index.md",
+        """# Style Iteration Archive
+
+| Iteration | Date | Path | Summary | User/design signal |
+|---|---:|---|---|---|
 """,
     )
 
