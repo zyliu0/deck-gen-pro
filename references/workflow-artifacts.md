@@ -1,6 +1,44 @@
 # Workflow Artifacts
 
-Create these markdown artifacts in order. Do not combine them into one file; the separation is what keeps the deck process slow, inspectable, and user-confirmable.
+Create these markdown artifacts in order after the user approves the initial plan-mode path. Do not combine them into one file; the separation is what keeps the deck process slow, inspectable, and user-confirmable.
+
+## 00-plan-mode-brief.md
+
+Purpose: start the deck project with an explicit planning gate before any files, research, style references, or slides are created.
+
+Use the platform's Plan Mode control when available. If no explicit control is available, produce the brief conversationally and ask for approval before execution.
+
+Required content:
+
+```markdown
+# Plan Mode Brief
+
+## Deck Request
+- Topic:
+- Audience:
+- Desired outcome:
+- Preferred output format:
+
+## Proposed Workflow
+1. Create workspace and audit materials.
+2. Research or collect missing evidence/assets if needed.
+3. Recommend visual styles.
+4. Generate style reference images or comps.
+5. Write slide-structure markdown.
+6. Assign images through an asset manifest.
+7. Build the deck.
+8. Render and QA.
+
+## First Execution Step
+- What I will inspect first:
+- What I will not do yet:
+```
+
+Stage gate question:
+
+```text
+I will start this deck in plan mode and pause production until you approve the workflow. Should I create the workspace and audit available material first?
+```
 
 ## 01-material-audit.md
 

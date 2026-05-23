@@ -2,20 +2,21 @@
 
 Deck Gen Pro is a Codex skill for making professional slide decks slowly, with deliberate approval gates. It is designed for deck work where the story, evidence, visual system, and image choices matter more than getting a pile of slides on the first try.
 
-Instead of generating slides immediately, the skill guides the agent through material audit, research, visual style selection, reference comps, slide-structure planning, image assignment, production, and QA.
+Instead of generating slides immediately, the skill first initializes the work in plan mode, then guides the agent through material audit, research, visual style selection, reference comps, slide-structure planning, image assignment, production, and QA.
 
 ## What It Does
 
 Deck Gen Pro turns a deck request into a staged workflow:
 
-1. Audit the local working environment for source material, brand assets, notes, data, images, and prior decks.
-2. Research or collect missing source material when the local environment is not enough.
-3. Interview the user on visual direction using curated professional style systems.
-4. Generate or collect style reference images before building slides.
-5. Write a slide-structure markdown file that maps every slide topic, title, proof object, source, and image.
-6. Assign images through an asset manifest so visuals are intentional and traceable.
-7. Build the deck only after the material, style, structure, and image plan are approved.
-8. Render and QA the output before calling it finished.
+1. Enter or initialize plan mode before execution.
+2. Audit the local working environment for source material, brand assets, notes, data, images, and prior decks.
+3. Research or collect missing source material when the local environment is not enough.
+4. Interview the user on visual direction using curated professional style systems.
+5. Generate or collect style reference images before building slides.
+6. Write a slide-structure markdown file that maps every slide topic, title, proof object, source, and image.
+7. Assign images through an asset manifest so visuals are intentional and traceable.
+8. Build the deck only after the material, style, structure, and image plan are approved.
+9. Render and QA the output before calling it finished.
 
 The default final deliverable is an editable PowerPoint deck, but the skill can route to Canva, HTML, PDF, image comps, or other formats when the user asks for them.
 
@@ -28,6 +29,7 @@ The skill is built around three principles:
 - Story before slides.
 - Evidence before claims.
 - Style before production.
+- Plan mode before execution.
 
 That makes it useful for investor decks, board updates, strategy decks, sales decks, research presentations, creative pitches, product narratives, and image-led decks where asset quality matters.
 
@@ -98,7 +100,9 @@ Invoke the skill when asking for a deck:
 Use $deck-gen-pro to make an investor deck for my AI workflow product.
 ```
 
-The skill should not immediately create slides. It should start by auditing available material and asking for confirmation before moving to the next stage.
+The skill should not immediately create slides. After plan-mode approval, it should start by auditing available material and asking for confirmation before moving to the next stage.
+
+The first action should be to enter or initialize plan mode. In plan mode, the agent restates the deck goal, names the staged workflow, identifies what it needs to inspect, and asks for approval before creating files, researching, generating references, or building slides.
 
 ## Create A Deck Workspace
 
@@ -111,6 +115,7 @@ python3 scripts/init_deck_workspace.py "AI platform investor deck" --root output
 It creates a timestamped folder containing:
 
 ```text
+00-plan-mode-brief.md
 01-material-audit.md
 02-research-notes.md
 03-style-direction.md
@@ -133,6 +138,7 @@ The skill depends on explicit planning artifacts:
 
 | Artifact | Role |
 |---|---|
+| `00-plan-mode-brief.md` | Records the approved plan-mode starting point once execution begins. |
 | `01-material-audit.md` | Decides whether the available source material is enough. |
 | `02-research-notes.md` | Records source-backed facts, links, visual candidates, and open questions. |
 | `03-style-direction.md` | Captures the selected visual system and approved reference comps. |

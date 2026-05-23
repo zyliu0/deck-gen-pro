@@ -45,6 +45,32 @@ def main() -> int:
         directory.mkdir(parents=True, exist_ok=True)
 
     write_if_missing(
+        workspace / "00-plan-mode-brief.md",
+        """# Plan Mode Brief
+
+## Deck Request
+- Topic:
+- Audience:
+- Desired outcome:
+- Preferred output format:
+
+## Proposed Workflow
+1. Create workspace and audit materials.
+2. Research or collect missing evidence/assets if needed.
+3. Recommend visual styles.
+4. Generate style reference images or comps.
+5. Write slide-structure markdown.
+6. Assign images through an asset manifest.
+7. Build the deck.
+8. Render and QA.
+
+## First Execution Step
+- What I will inspect first:
+- What I will not do yet:
+""",
+    )
+
+    write_if_missing(
         workspace / "01-material-audit.md",
         """# Material Audit
 

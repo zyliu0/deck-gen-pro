@@ -1,19 +1,20 @@
 ---
 name: deck-gen-pro
-description: Professional staged deck-making workflow for creating, planning, or upgrading presentations, slide decks, pitch decks, PowerPoint/PPTX decks, Canva presentations, or HTML slide prototypes. Use when the user asks for a deck or slides and wants high-quality research, narrative structure, visual style selection, reference images, image sourcing or generation, and step-by-step approval instead of one-shot slide generation.
+description: Professional staged deck-making workflow for creating, planning, or upgrading presentations, slide decks, pitch decks, PowerPoint/PPTX decks, Canva presentations, or HTML slide prototypes. Use when the user asks for a deck or slides and wants the work to begin in plan mode, then proceed through high-quality research, narrative structure, visual style selection, reference images, image sourcing or generation, and step-by-step approval instead of one-shot slide generation.
 ---
 
 # Deck Gen Pro
 
 ## Overview
 
-Use this skill to make professional decks slowly and deliberately. Do not start by generating slides. Move through gated stages: material audit, research and asset gathering, style interview, style references, slide-structure markdown, final deck production, and QA.
+Use this skill to make professional decks slowly and deliberately. The first action is to enter or initialize plan mode. Do not start by generating slides. Move through gated stages: plan-mode brief, material audit, research and asset gathering, style interview, style references, slide-structure markdown, final deck production, and QA.
 
 This skill orchestrates other deck tools. Use the installed `Presentations` skill for editable artifact-tool PPTX builds, `pptx` when a `.pptx` file is touched, Canva skills when the user explicitly wants Canva, and browser/image tools for research, screenshots, downloaded source assets, or generated reference imagery.
 
 ## Non-Negotiables
 
 - Ask for user confirmation at every stage gate before moving to the next stage.
+- Begin in plan mode before creating files, researching, choosing style, or building slides.
 - Keep all planning artifacts as markdown before final deck generation.
 - Use exact source material for facts, names, dates, quotes, claims, and metrics.
 - Never invent missing evidence, charts, logos, screenshots, or user-provided brand facts.
@@ -25,7 +26,21 @@ This skill orchestrates other deck tools. Use the installed `Presentations` skil
 
 ## Stage-Gated Workflow
 
-### 0. Create Working Folder
+### 0. Initialize Plan Mode
+
+Enter the platform's plan mode before doing deck work. If the environment has an explicit Plan Mode or EnterPlanMode control, use it immediately. If no explicit control is available, simulate plan mode by stating that production is paused, giving a short plan, and asking the user to approve the first execution step.
+
+In plan mode:
+
+- restate the deck topic, audience, output format, and known source material
+- list the staged workflow you will follow
+- identify what you need to inspect first
+- ask only the minimum needed question if the request is too ambiguous to audit materials
+- do not generate slides, style comps, downloaded assets, or final deck files
+
+Leave plan mode only after the user approves the initial execution path. The first executable step after approval is workspace creation and material audit.
+
+### 1. Create Working Folder
 
 Create a task folder and starter artifacts with:
 
@@ -35,7 +50,7 @@ python3 <skill-dir>/scripts/init_deck_workspace.py "<deck topic or task slug>" -
 
 Use the generated folder for all notes, research, assets, style references, structure markdown, previews, and QA.
 
-### 1. Material Audit
+### 2. Material Audit
 
 Inspect the working environment before researching. Look for user-provided files, existing notes, brand assets, previous decks, source documents, datasets, screenshots, images, and URLs.
 
@@ -49,7 +64,7 @@ Write `01-material-audit.md` with:
 
 If material is enough, ask the user to confirm the interpretation before style work. If not enough, propose the research or creative asset plan first.
 
-### 2. Research And Asset Collection
+### 3. Research And Asset Collection
 
 Use this stage only when the audit is `no` or `partial`, or when the user asks for current facts, source links, real product/place/person imagery, charts, or creative art direction.
 
@@ -63,7 +78,7 @@ Write `02-research-notes.md` and `assets/asset-manifest.md`. Capture:
 
 Ask the user to approve the material base before recommending visual styles.
 
-### 3. Visual Style Interview
+### 4. Visual Style Interview
 
 Read `references/style-systems.md`. Recommend 2-3 style systems that fit the topic, audience, evidence density, and available assets. Present the recommendation as an interview-style prompt with:
 
@@ -73,7 +88,7 @@ Read `references/style-systems.md`. Recommend 2-3 style systems that fit the top
 
 Do not proceed until the user chooses or modifies a direction.
 
-### 4. Style Reference Images
+### 5. Style Reference Images
 
 After style approval, create 2-4 style reference images or comps. These are not the final deck and not HTML slides. They are visual direction checks showing layout rhythm, palette, typography mood, image treatment, and chart/diagram style.
 
@@ -87,7 +102,7 @@ Write `03-style-direction.md` with:
 
 Ask the user to approve one direction before writing the deck structure.
 
-### 5. Slide Structure Markdown
+### 6. Slide Structure Markdown
 
 Write `04-slide-structure.md` before generating slides. Follow `references/workflow-artifacts.md`.
 
@@ -104,7 +119,7 @@ For each slide, specify:
 
 Ask the user to approve or revise the structure. Do not build slides before approval.
 
-### 6. Image Assignment Pass
+### 7. Image Assignment Pass
 
 Write or update `assets/asset-manifest.md` so every visual asset has:
 
@@ -118,7 +133,7 @@ Write or update `assets/asset-manifest.md` so every visual asset has:
 
 For slides with multiple images, define grid rules and image hierarchy. Avoid decorative images that do not prove or clarify the slide topic.
 
-### 7. Deck Build
+### 8. Deck Build
 
 Choose output format using `references/tooling-and-output.md`.
 
@@ -126,7 +141,7 @@ Default to editable PPTX through the installed `Presentations` skill. Use genera
 
 Build only after the material, style, structure, and image assignment stages are approved.
 
-### 8. QA And Iteration
+### 9. QA And Iteration
 
 Render the deck to preview images or a contact sheet. Check:
 
