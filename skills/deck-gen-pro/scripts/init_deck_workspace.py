@@ -57,14 +57,13 @@ def main() -> int:
 - Preferred output format:
 
 ## Proposed Workflow
-1. Create workspace and audit materials.
-2. Research or collect missing evidence/assets if needed.
-3. Recommend visual styles.
-4. Generate style reference images or comps.
-5. Write slide-structure markdown.
-6. Review visual rhythm and assign images through an asset manifest.
-7. Build the deck.
-8. Render, contact-sheet review, and QA.
+1. Brief: confirm goal, audience, constraints, and output format.
+2. Material: audit local sources and gather missing evidence/assets only when needed.
+3. Direction: choose a visual direction and test it with real slide-like comps.
+4. Structure: write the slide-by-slide story plan.
+5. Assets: assign visuals by role, provenance, fit behavior, and fallback.
+6. Build: produce the editable deck in the best format for the request.
+7. QA: render previews, review the contact sheet, fix issues, and hand off.
 
 ## First Execution Step
 - What I will inspect first:
@@ -86,6 +85,13 @@ def main() -> int:
 | Item | Path/URL | Type | Usefulness | Notes |
 |---|---|---|---|---|
 
+## Source Constraints
+- Approved source sets:
+- Rejected or outdated source sets:
+- Forbidden phrases, claims, or visual treatments:
+- Required sections, chapters, or narrative beats:
+- Source deck/template rules:
+
 ## Missing Material
 | Need | Why it matters | How to obtain |
 |---|---|---|
@@ -104,6 +110,7 @@ def main() -> int:
 ## Risks
 - Evidence risk:
 - Asset risk:
+- Source-constraint risk:
 - Visual rhythm risk:
 - Brand risk:
 - Timeline/tooling risk:
@@ -153,7 +160,7 @@ next-stage:
 - Rejected directions:
 
 ## Design System
-- Palette:
+- Palette logic:
 - Typography:
 - Layout grammar:
 - Chart/diagram style:
@@ -169,7 +176,9 @@ next-stage:
 - Long-text handling:
 - Screenshot handling:
 - Photo crop handling:
+- Image fit behavior:
 - Diagram/proof-object handling:
+- Text fit behavior:
 - Visual rhythm principles:
 - Generated-image boundaries:
 
@@ -187,6 +196,9 @@ next-stage:
 - When to simplify a card or diagram:
 
 ## Image And Caption Rules
+- When to use cover:
+- When to use contain:
+- When to use a designed frame:
 - How captions align to images/cards:
 - Where captions should not appear:
 - How blank space should be handled:
@@ -231,12 +243,13 @@ next-stage:
 - Tone:
 
 ## Narrative Arc
-1. Context:
-2. Tension:
-3. Insight:
-4. Recommendation:
-5. Proof:
-6. Close:
+- Arc type:
+- Opening move:
+- Core tension or question:
+- Development path:
+- Proof, texture, or demonstration:
+- Closing action or feeling:
+- Notes on why this arc fits:
 
 ## Slide 01: [Topic]
 
@@ -251,6 +264,8 @@ next-stage:
   - Long-text handling:
   - Screenshot/caption handling:
   - Card/proof-object handling:
+  - Image fit behavior:
+  - Text fit risk:
 - Text hierarchy:
   - Title:
   - Primary copy:
@@ -263,6 +278,7 @@ next-stage:
   - 
 - Image assignment:
   - Visual role:
+  - Fit behavior:
   - Crop/framing:
   - Multiple-image grid rules:
   - Why image use or restraint is intentional:
@@ -297,8 +313,8 @@ next-stage:
         workspace / "assets" / "asset-manifest.md",
         """# Asset Manifest
 
-| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fallback |
-|---|---|---|---|---|---|---|---|
+| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fit behavior | Fallback |
+|---|---|---|---|---|---|---|---|---|
 """,
     )
 
@@ -312,7 +328,13 @@ next-stage:
 
 ## Slide Source Mapping
 
+## Source Constraints Applied
+
 ## Fonts And Fallbacks
+
+## Image Placement Decisions
+
+## Text Fit Decisions
 
 ## Asset Processing Notes
 
@@ -328,6 +350,14 @@ next-stage:
 
 ## Preview Or Contact Sheet Paths
 
+## Source Constraint QA
+
+- Approved sources used:
+- Rejected or outdated assets excluded:
+- Forbidden content absent:
+- Required sections preserved:
+- Source deck/template rules followed:
+
 ## Factual QA
 
 ## Deck-Level Visual Balance QA
@@ -342,15 +372,25 @@ next-stage:
 
 ## Visual QA
 
+- Image distortion/aspect-ratio checks:
 - Text overlap, overflow, and wrapping checks:
 - Spacing, padding, and margin consistency checks:
 - Typography behavior checks:
 - Image crop and caption relationship checks:
 
+## Final File Check
+
+- Deck opens:
+- Media embedded:
+- Expected slide count:
+- Preview/contact sheet reviewed:
+- Visual QA completed after rendering:
+
 ## Image Assignment QA
 
 - Visual roles are correctly labeled:
 - Generated images are not treated as factual proof:
+- Package/file checks are not treated as visual QA:
 
 ## User Critique Applied To Style Rules
 

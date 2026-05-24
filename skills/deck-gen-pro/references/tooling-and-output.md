@@ -2,15 +2,15 @@
 
 Use this file to decide the final production format and supporting tools.
 
-## Default Recommendation
+## Output Choice
 
-Default to editable PPTX when the user asks for a professional deck, pitch deck, board deck, sales deck, strategy deck, report deck, or presentation. A final PPTX is the most useful default because business users can edit, share, present, and reuse it.
+Start by choosing the editable source format that best matches the user's workflow. PPTX is the common business-deck choice because many teams can edit, share, present, and reuse it, but it is a default preference rather than a hard requirement.
 
-Use the host environment's best PPTX-capable presentation workflow for high-polish editable builds. If any `.pptx` file is read, edited, created, converted, or used as a template, use the most reliable available PPTX reader/editor and preserve editability whenever possible.
+Use the host environment's best presentation workflow for high-polish editable builds. If a `.pptx` file is read, edited, created, converted, or used as a template, use the most reliable available PPTX reader/editor and preserve editability whenever possible.
 
 ## Format Router
 
-| User need | Best output | Notes |
+| User need | Likely output | Notes |
 |---|---|---|
 | Editable business deck | PPTX | Use the best available PPTX-capable builder; render previews before final. |
 | Existing template/source deck | PPTX clone/edit | Preserve typography, layout, and brand chrome; do not rebuild from blank unless required. |
@@ -22,7 +22,7 @@ Use the host environment's best PPTX-capable presentation workflow for high-poli
 
 ## HTML Guidance
 
-Do not use HTML as the default final deck format. HTML is useful for:
+Avoid HTML as the final deck format unless the user wants a web-native experience or HTML clearly fits the distribution context. HTML is useful for:
 
 - interactive prototypes
 - browser-based storytelling
@@ -30,11 +30,13 @@ Do not use HTML as the default final deck format. HTML is useful for:
 - quick style reference comps
 - image-heavy web presentation previews
 
-If the final deliverable is PPTX, HTML may still be useful for temporary visual exploration, but the approved deck must be rebuilt or exported in the requested final format.
+If the final deliverable is PPTX or another editable deck format, HTML may still be useful for temporary visual exploration, but the approved deck should be rebuilt or exported in the requested final format.
 
 ## Image Sourcing
 
 Use real images when the audience needs to inspect a real product, place, person, venue, brand, interface, chart, or screenshot. Download or screenshot source assets only when permitted and record provenance in `assets/asset-manifest.md`.
+
+Preserve image aspect ratio in every production format. If a visual needs to fill a frame, crop it deliberately. If the whole asset must remain visible, contain it and make the surrounding space feel designed. If neither is elegant, design a frame or choose another composition. Do not stretch images to satisfy a layout.
 
 Treat images by narrative role:
 
@@ -55,6 +57,10 @@ Use generated images when:
 - a slide needs atmosphere, metaphor, category framing, or style continuity and local assets are insufficient
 
 Never use generated imagery to imply a real event, person, product state, venue, or metric.
+
+## Text Fit Guidance
+
+Visible slide text should fit by design, not by fragile shrinking. Shorten copy, split hierarchy, move nuance to notes, or change the composition when text clips, touches edges, overlaps other content, or becomes unreadable after rendering.
 
 ## Chart And Data Guidance
 

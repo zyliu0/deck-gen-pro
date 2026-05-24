@@ -1,8 +1,8 @@
 # Deck Gen Pro
 
-Deck Gen Pro is an agent skill for creating professional presentation decks through a slow, staged workflow. It is built for moments where the story, evidence, visual direction, and image choices matter too much for one-shot slide generation.
+Deck Gen Pro is a PowerPoint builder skill for making product-grade presentation decks with an LLM. It slows the process down so a deck feels like a real project: brief, evidence, style direction, structure, assets, build, and visual QA.
 
-The skill starts in plan mode, confirms each stage with the user, and only builds slides after the material base, style direction, slide structure, and asset assignments are approved.
+Instead of jumping straight into slides, the skill guides the agent through seven project stages and asks for human approval at the moments where direction, evidence, or design judgment can change the outcome.
 
 > [!NOTE]
 > This is a platform-neutral Agent Skill. Install it with the `skills` CLI or copy `skills/deck-gen-pro` into any agent skill directory that supports `SKILL.md`.
@@ -12,14 +12,15 @@ The skill starts in plan mode, confirms each stage with the user, and only build
 - Starts every deck project in plan mode before execution
 - Audits local source material before researching
 - Collects missing facts, images, screenshots, and generated creative assets only when needed
-- Recommends visual styles from 10 professional deck systems
+- Recommends visual directions from reusable professional style territories
 - Creates style references before deck production
 - Reviews visual rhythm so image-led, text-led, diagram-led, data-led, and proof-led moments feel intentional
 - Distinguishes proof, mood, metaphor, texture, and generated visuals
+- Adds production gates for source constraints, image aspect ratio, text fit, contact sheets, and final file checks
 - Preserves visible style iterations for later comparison
 - Writes a slide-by-slide structure markdown file before building
 - Tracks every visual through an asset manifest
-- Defaults to editable PPTX while supporting Canva, HTML, PDF, and image comps when requested
+- Chooses an editable source format by default, with PPTX as the common business-deck output
 - Keeps QA notes for story flow, factual accuracy, layout, chart readability, and image assignment
 
 ## Installation
@@ -66,15 +67,17 @@ The first response should not be slides. It should be a plan-mode brief that res
 
 ## How It Works
 
-Deck Gen Pro keeps the process simple: understand the deck, choose a direction, outline the story, then build.
+Deck Gen Pro keeps the LLM in project-builder mode. The seven stages create enough friction to protect quality without turning the workflow into a rigid template.
 
 | Phase | What Happens | User Checkpoint |
 |---|---|---|
-| 1. Plan | Restate the goal, audience, output format, and first step. | Approve the workflow before work begins. |
-| 2. Gather | Audit existing material, then research or collect assets only if needed. | Confirm the source material is enough. |
-| 3. Style | Recommend a visual direction and create a few reference images or comps. | Choose or revise the style. |
-| 4. Structure | Write the slide-by-slide markdown plan, including titles, proof, sources, visuals, and visual rhythm. | Approve the slide flow before production. |
-| 5. Build | Create the deck, render previews, review the contact sheet, QA it, and fix issues. | Review the final deck and QA summary. |
+| 1. Brief | Restate the goal, audience, constraints, output format, and first move. | Approve the project path before production begins. |
+| 2. Material | Audit local sources and gather missing facts or assets only when needed. | Confirm the evidence and asset base. |
+| 3. Direction | Choose a visual direction and test it with real slide-like comps. | Approve or revise the style system. |
+| 4. Structure | Write the slide-by-slide markdown plan with story, claims, proof, and rhythm. | Approve the flow before production. |
+| 5. Assets | Assign visuals by role, crop logic, provenance, and fallback plan. | Confirm images are purposeful and usable. |
+| 6. Build | Produce the editable deck in the best format for the request, usually PPTX for business use. | Review rendered previews. |
+| 7. QA | Inspect the contact sheet and individual slides for content, layout, image, and text issues. | Approve the product-grade deck or request revisions. |
 
 ## Workspace Artifacts
 
@@ -103,9 +106,9 @@ qa/
 output/
 ```
 
-## Included Style Systems
+## Included Style Territories
 
-Deck Gen Pro includes 10 style systems for the visual interview stage:
+Deck Gen Pro includes a starter library of style territories for the visual interview stage. They are prompts for judgment, not fixed templates:
 
 | Style | Best for |
 |---|---|
@@ -129,6 +132,7 @@ deck-gen-pro/
     └── deck-gen-pro/
         ├── SKILL.md
         ├── references/
+        │   ├── production-quality-gates.md
         │   ├── style-systems.md
         │   ├── tooling-and-output.md
         │   └── workflow-artifacts.md

@@ -1,6 +1,6 @@
-# Style Systems
+# Style Territories
 
-Use these systems during the visual style interview. They are reusable starting points, not rigid templates. Recommend 2-3 options based on the deck topic, audience, evidence density, source material, and asset quality.
+Use these style territories during the visual style interview. They are reusable starting points, not rigid templates. Recommend a small, focused set of options based on the deck topic, audience, evidence density, source material, and asset quality.
 
 Sources to consult when refreshing this file: [Pitch's public template gallery](https://pitch.com/templates), [Pitch's presentation design guidance](https://pitch.com/guides/presentation/design-your-presentation), and [Pitch's template creation process](https://pitch.com/blog/designing-presentation-templates). Pitch frames templates as reusable slide layouts and styles as consistent rules for color, fonts, and spacing; its template process also emphasizes discovery, plain-text outline, visual exploration, feedback, and iteration.
 
@@ -10,7 +10,7 @@ Sources to consult when refreshing this file: [Pitch's public template gallery](
 - Prefer restrained systems for executive, financial, legal, technical, or board audiences.
 - Prefer image-led systems for consumer, place, travel, fashion, food, art, real estate, people, sports, and product-showcase decks.
 - Use high-contrast accent colors only for the few things the audience must notice.
-- Keep the chosen palette to 2-4 working colors plus neutrals.
+- Keep the chosen palette focused enough to feel intentional, with neutrals and accents serving clear roles.
 - Avoid repeating one layout across every slide; vary rhythm while keeping the same grammar.
 
 ## 1. Editorial Strategy
@@ -23,11 +23,11 @@ Layout:
 - Occasional magazine-style chapter openers with full-bleed image and compact text.
 - Use generous margins and strong asymmetry.
 
-Palette:
-- Warm white `#F7F3EC`
-- Ink `#161616`
-- Deep olive `#3B4A3F`
-- Signal red `#C43E2F`
+Palette logic:
+- Warm editorial ground
+- Dark ink for authority
+- Muted organic support color
+- Sparing signal accent for emphasis
 
 Typography:
 - Serif or humanist headline, clean sans body.
@@ -50,11 +50,11 @@ Layout:
 - Use sparse iconography and simple architecture diagrams.
 - Keep one idea per slide, with strong whitespace.
 
-Palette:
-- Near black `#101114`
-- White `#FFFFFF`
-- Electric blue `#2F6BFF`
-- Soft gray `#E8EAEE`
+Palette logic:
+- High-contrast neutral base
+- Crisp white space
+- Confident product accent
+- Soft structural gray
 
 Typography:
 - Confident sans headline, regular sans body.
@@ -77,11 +77,11 @@ Layout:
 - Use centered title slides sparingly; body slides stay grid-aligned.
 - Strong image cropping and consistent captions.
 
-Palette:
-- Bone `#F4EFE6`
-- Charcoal `#202020`
-- Stone `#B9B2A7`
-- Metallic accent `#A9854F`
+Palette logic:
+- Quiet light ground
+- Charcoal text
+- Stone-like neutrals
+- Subtle premium accent
 
 Typography:
 - Elegant serif headlines, neutral sans captions.
@@ -104,12 +104,12 @@ Layout:
 - Use repeated chart grammar and consistent axis/legend placement.
 - Include appendix-style backup slides for detail.
 
-Palette:
-- White `#FFFFFF`
-- Slate `#27313D`
-- Cool gray `#D9DEE6`
-- Teal `#168A8F`
-- Amber alert `#D99A20`
+Palette logic:
+- Clean neutral working surface
+- Slate text and structure
+- Cool gray dividers and fills
+- Trustworthy analytic accent
+- Warm alert accent for exceptions
 
 Typography:
 - One sans family with strict size hierarchy.
@@ -132,12 +132,11 @@ Layout:
 - Alternate between architecture maps, user journey slides, and proof metrics.
 - Show screenshots in device/browser frames only when legibility survives.
 
-Palette:
-- Graphite `#171A1F`
-- Cloud `#F6F8FB`
-- Cyan `#22B8CF`
-- Violet `#7C5CFF`
-- Lime `#B7E35F`
+Palette logic:
+- Graphite or cloud base depending on density
+- Technical cool accent
+- Secondary system accent for layers
+- Bright status accent only when useful
 
 Typography:
 - Technical sans or grotesk headline, compact body.
@@ -160,12 +159,12 @@ Layout:
 - Use calm section dividers and clear source notes.
 - Leave room for caveats and methodology.
 
-Palette:
-- Off-white `#FAFAF7`
-- Deep green `#1F4D3A`
-- Pale mint `#DCEFE6`
-- Blue gray `#637A89`
-- Coral accent `#E46F5A`
+Palette logic:
+- Soft reading ground
+- Scholarly deep anchor color
+- Pale evidence panels
+- Calm secondary neutral
+- Human accent for findings or quotes
 
 Typography:
 - Scholarly serif or readable sans for headlines.
@@ -188,12 +187,11 @@ Layout:
 - Moodboard grids and concept territories can use multiple images.
 - Keep final recommendation slides simpler and more decisive.
 
-Palette:
-- Cream `#FFF6E8`
-- Punch pink `#FF4F8B`
-- Cobalt `#2458FF`
-- Acid green `#C7FF2E`
-- Black `#111111`
+Palette logic:
+- Warm light base
+- Bold campaign accents
+- Strong dark grounding color
+- High-energy contrast used selectively
 
 Typography:
 - Bold display headline with simple body.
@@ -216,12 +214,12 @@ Layout:
 - Use repeated navigation markers and section dividers.
 - Favor clarity over decoration.
 
-Palette:
-- White `#FFFFFF`
-- Navy `#17233C`
-- Ice `#EDF4FA`
-- Sky `#4BA3F2`
-- Orange accent `#F28C28`
+Palette logic:
+- Clean white or light working surface
+- Dark corporate anchor
+- Pale structural fills
+- Clear action accent
+- Warm decision accent for emphasis
 
 Typography:
 - Clean corporate sans.
@@ -244,12 +242,12 @@ Layout:
 - Use visual rhythm: wide establishing shot, detail grid, practical info.
 - Text overlays need strong contrast and quiet placement.
 
-Palette:
-- Deep forest `#12372A`
-- Warm sand `#E9D7B8`
-- Clay `#B8643C`
-- Mist `#EDF2EF`
-- Night `#111516`
+Palette logic:
+- Place-specific dark anchor
+- Warm natural ground
+- Local material accent
+- Soft atmospheric neutral
+- Night tone for contrast
 
 Typography:
 - Serif or elegant sans titles with compact labels.
@@ -272,12 +270,11 @@ Layout:
 - Include agenda, activity, output, and decision slides.
 - Preserve readability when printed or shared as PDF.
 
-Palette:
-- White `#FFFFFF`
-- Ink `#202124`
-- Pale yellow `#FFF2A8`
-- Soft blue `#CDE7FF`
-- Magenta accent `#D94B8A`
+Palette logic:
+- White or light canvas
+- Dark readable ink
+- Soft collaboration colors
+- One lively facilitator accent
 
 Typography:
 - Friendly sans headline and body.

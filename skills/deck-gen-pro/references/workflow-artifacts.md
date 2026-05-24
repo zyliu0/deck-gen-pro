@@ -1,6 +1,6 @@
 # Workflow Artifacts
 
-Create these markdown artifacts in order after the user approves the initial plan-mode path. Do not combine them into one file; the separation is what keeps the deck process slow, inspectable, and user-confirmable.
+Use these markdown artifacts as the default scaffold after the user approves the initial plan-mode path. For a new or high-stakes deck, keep the artifacts separate so the process stays slow, inspectable, and user-confirmable. For a small revision, QA-only pass, or user-authorized autonomous run, combine or skip artifacts when that reduces noise; record the reason in build or QA notes.
 
 ## 00-plan-mode-brief.md
 
@@ -8,7 +8,7 @@ Purpose: start the deck project with an explicit planning gate before any files,
 
 Use the platform's Plan Mode control when available. If no explicit control is available, produce the brief conversationally and ask for approval before execution.
 
-Required content:
+Recommended content:
 
 ```markdown
 # Plan Mode Brief
@@ -20,14 +20,13 @@ Required content:
 - Preferred output format:
 
 ## Proposed Workflow
-1. Create workspace and audit materials.
-2. Research or collect missing evidence/assets if needed.
-3. Recommend visual styles.
-4. Generate style reference images or comps.
-5. Write slide-structure markdown.
-6. Review visual rhythm and assign images through an asset manifest.
-7. Build the deck.
-8. Render, contact-sheet review, and QA.
+1. Brief: confirm goal, audience, constraints, and output format.
+2. Material: audit local sources and gather missing evidence/assets only when needed.
+3. Direction: choose a visual direction and test it with real slide-like comps.
+4. Structure: write the slide-by-slide story plan.
+5. Assets: assign visuals by role, provenance, fit behavior, and fallback.
+6. Build: produce the editable deck in the best format for the request.
+7. QA: render previews, review the contact sheet, fix issues, and hand off.
 
 ## First Execution Step
 - What I will inspect first:
@@ -44,7 +43,7 @@ I will start this deck in plan mode and pause production until you approve the w
 
 Purpose: decide whether the working environment already has enough material.
 
-Required sections:
+Recommended sections:
 
 ```markdown
 # Material Audit
@@ -58,6 +57,13 @@ Required sections:
 ## Available Material
 | Item | Path/URL | Type | Usefulness | Notes |
 |---|---|---|---|---|
+
+## Source Constraints
+- Approved source sets:
+- Rejected or outdated source sets:
+- Forbidden phrases, claims, or visual treatments:
+- Required sections, chapters, or narrative beats:
+- Source deck/template rules:
 
 ## Missing Material
 | Need | Why it matters | How to obtain |
@@ -77,6 +83,7 @@ Required sections:
 ## Risks
 - Evidence risk:
 - Asset risk:
+- Source-constraint risk:
 - Visual rhythm risk:
 - Brand risk:
 - Timeline/tooling risk:
@@ -96,7 +103,7 @@ I found [enough/not enough/partial] material for the deck. Here is the base I wo
 
 Purpose: capture source-backed facts and asset candidates.
 
-Required sections:
+Recommended sections:
 
 ```markdown
 # Research Notes
@@ -131,7 +138,7 @@ I have enough source material to proceed. The main evidence base is [summary]. T
 
 Purpose: record the selected style, practical layout rules, rendered comp QA, and reference-image/composition approval.
 
-Required sections:
+Recommended sections:
 
 ```markdown
 # Style Direction
@@ -146,7 +153,7 @@ Required sections:
 - Rejected directions:
 
 ## Design System
-- Palette:
+- Palette logic:
 - Typography:
 - Layout grammar:
 - Chart/diagram style:
@@ -162,7 +169,9 @@ Required sections:
 - Long-text handling:
 - Screenshot handling:
 - Photo crop handling:
+- Image fit behavior:
 - Diagram/proof-object handling:
+- Text fit behavior:
 - Visual rhythm principles:
 - Generated-image boundaries:
 
@@ -180,6 +189,9 @@ Required sections:
 - When to simplify a card or diagram:
 
 ## Image And Caption Rules
+- When to use cover:
+- When to use contain:
+- When to use a designed frame:
 - How captions align to images/cards:
 - Where captions should not appear:
 - How blank space should be handled:
@@ -217,7 +229,7 @@ Stage gate question:
 I have prepared the style direction, layout rules, reference comps, and visual QA notes. Does this feel like the right deck style, or should I revise the visual system before outlining slides?
 ```
 
-Do not proceed to slide-structure generation until this file includes both visual mood rules and practical layout rules for long text, screenshots, captions, cards, diagrams, and proof objects.
+Pause before slide-structure generation until this file includes both visual mood rules and practical layout rules for long text, screenshots, captions, cards, diagrams, and proof objects. For a narrow revision, record which rules already exist and which ones are unnecessary for the requested change.
 
 ## 04-slide-structure.md
 
@@ -236,12 +248,13 @@ Start with:
 - Tone:
 
 ## Narrative Arc
-1. Context:
-2. Tension:
-3. Insight:
-4. Recommendation:
-5. Proof:
-6. Close:
+- Arc type:
+- Opening move:
+- Core tension or question:
+- Development path:
+- Proof, texture, or demonstration:
+- Closing action or feeling:
+- Notes on why this arc fits:
 ```
 
 For every slide:
@@ -254,24 +267,27 @@ For every slide:
 - Narrative role: [context/tension/insight/proof/recommendation/close/appendix]
 - Audience takeaway: [what the viewer should remember]
 - Layout: [chosen style layout pattern]
-- Composition mode: [image-led/text-led/diagram-led/data-led/split image-text/full-bleed image with restrained text/proof-led/mostly negative space]
+- Composition mode: [common modes include image-led, text-led, diagram-led, data-led, split image-text, full-bleed image with restrained text, proof-led, mostly negative space, or a custom mode]
 - Visual rhythm intent: [why this slide should feel this way in the sequence]
 - Practical style rules:
   - Long-text handling:
   - Screenshot/caption handling:
   - Card/proof-object handling:
+  - Image fit behavior:
+  - Text fit risk:
 - Text hierarchy:
   - Title:
   - Primary copy:
   - Secondary copy:
   - Caption/footer:
-- Proof object: [chart/image/table/quote/diagram/comparison/timeline/big number]
+- Proof object: [chart/image/table/quote/diagram/comparison/timeline/big number/other support object]
 - Source references:
   - [source id or URL]
 - Visual assets:
   - [asset_id or needed asset]
 - Image assignment:
-  - Visual role: [proof/mood/metaphor/texture/category context/generated/none]
+- Visual role: [common roles include proof, mood, metaphor, texture, category context, generated, none, or custom]
+- Fit behavior: [cover/contain/designed frame/none/other aspect-ratio-safe treatment]
   - Crop/framing:
   - Multiple-image grid rules:
   - Why image use or restraint is intentional:
@@ -315,13 +331,13 @@ Here is the proposed slide-by-slide structure. Should I build this deck as-is, r
 
 Purpose: prevent random image use and make visual assignment auditable.
 
-Required format:
+Recommended format:
 
 ```markdown
 # Asset Manifest
 
-| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fallback |
-|---|---|---|---|---|---|---|---|
+| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fit behavior | Fallback |
+|---|---|---|---|---|---|---|---|---|
 ```
 
 Rules:
@@ -330,6 +346,7 @@ Rules:
 - Separate downloaded, generated, screenshot, and user-provided assets.
 - Keep generated image prompts near the asset entry or in a linked prompt file.
 - Distinguish proof assets from mood, metaphor, texture, category-context, and generated assets.
+- Record whether each visual should use cover, contain, a designed frame, or remain undecided until composition.
 - Mark any asset that is not approved or has unclear usage.
 
 ## 05-build-notes.md
@@ -341,7 +358,10 @@ Include:
 - output format
 - toolchain used
 - slide source mapping
+- source constraints applied
 - fonts and fallbacks
+- image placement decisions
+- text fit decisions
 - asset processing notes
 - known compromises
 - final export path
@@ -353,15 +373,19 @@ Purpose: prove the deck was reviewed after rendering.
 Include:
 
 - preview/contact sheet paths
+- source constraint QA
 - factual QA notes
 - deck-level visual balance QA
 - visual QA notes
+- image distortion/aspect-ratio checks
 - text overlap, overflow, and wrapping checks
+- final file check
 - spacing, padding, and margin consistency checks
 - typography behavior checks
 - image crop and caption relationship checks
 - image assignment QA
 - generated images are not treated as factual proof
+- package/file checks are not treated as visual QA
 - user critique translated into style-rule updates
 - fixes made
 - remaining risks
@@ -380,11 +404,39 @@ Deck-level visual balance QA should ask:
 - Text-only slides are intentional:
 ```
 
+Source and production QA should ask:
+
+```markdown
+## Source Constraint QA
+
+- Approved sources used:
+- Rejected or outdated assets excluded:
+- Forbidden content absent:
+- Required sections preserved:
+- Source deck/template rules followed:
+
+## Image Distortion QA
+
+- Rendered slides reviewed:
+- Images preserve aspect ratio:
+- Cover crops keep important content visible:
+- Contained images use intentional framing/empty space:
+- Logos, screenshots, products, rooms, people, and diagrams look natural:
+
+## Final File Check
+
+- Deck opens:
+- Media embedded:
+- Expected slide count:
+- Preview/contact sheet reviewed:
+- Visual QA completed after rendering:
+```
+
 ## archive/style-iterations/index.md
 
 Purpose: preserve visible iterations so earlier directions can be compared later.
 
-Required format:
+Recommended format:
 
 ```markdown
 # Style Iteration Archive
