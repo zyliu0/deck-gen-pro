@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a staged workspace for a Deck Gen Pro project."""
+"""Create a staged workspace for a DeckMason project."""
 
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ def write_if_missing(path: Path, content: str) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Create Deck Gen Pro workspace files.")
+    parser = argparse.ArgumentParser(description="Create DeckMason workspace files.")
     parser.add_argument("topic", help="Deck topic or short project name.")
     parser.add_argument("--root", default="outputs", help="Root directory for generated workspaces.")
     parser.add_argument("--slug", default="", help="Optional explicit workspace slug.")

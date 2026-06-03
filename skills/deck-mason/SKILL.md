@@ -1,9 +1,9 @@
 ---
-name: deck-gen-pro
+name: deck-mason
 description: Professional PowerPoint and deck-builder workflow for creating, planning, or upgrading product-grade presentations, slide decks, pitch decks, PowerPoint/PPTX decks, Canva presentations, or HTML slide prototypes. Use when the user asks for a deck or slides and wants the work to begin in plan mode, then slow down through research, narrative structure, visual direction, reference comps, image sourcing or generation, production, and QA instead of one-shot slide generation.
 ---
 
-# Deck Gen Pro
+# DeckMason
 
 ## Overview
 

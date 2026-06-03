@@ -83,4 +83,4 @@ Every chart slide needs:
 - Image-generation tools: generated style references or creative imagery.
 - Browser/web tools: current research, source verification, screenshots, image sourcing.
 
-Load only the tool or supporting skill needed for the current stage. Keep `deck-gen-pro` as the process controller and use other tools as production tools.
+Load only the tool or supporting skill needed for the current stage. Keep `deck-mason` as the process controller and use other tools as production tools.

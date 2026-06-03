@@ -1,11 +1,11 @@
-# Deck Gen Pro
+# DeckMason
 
-Deck Gen Pro is a PowerPoint builder skill for making product-grade presentation decks with an LLM. It slows the process down so a deck feels like a real project: brief, evidence, style direction, structure, assets, build, and visual QA.
+DeckMason is a PowerPoint builder skill for making product-grade presentation decks with an LLM. It slows the process down so a deck feels like a real project: brief, evidence, style direction, structure, assets, build, and visual QA.
 
 Instead of jumping straight into slides, the skill guides the agent through seven project stages and asks for human approval at the moments where direction, evidence, or design judgment can change the outcome.
 
 > [!NOTE]
-> This is a platform-neutral Agent Skill. Install it with the `skills` CLI or copy `skills/deck-gen-pro` into any agent skill directory that supports `SKILL.md`.
+> This is a platform-neutral Agent Skill. Install it with the `skills` CLI or copy `skills/deck-mason` into any agent skill directory that supports `SKILL.md`.
 
 ## Features
 
@@ -28,31 +28,31 @@ Instead of jumping straight into slides, the skill guides the agent through seve
 Install directly from GitHub:
 
 ```bash
-npx skills add https://github.com/zyliu0/deck-gen-pro
+npx skills add https://github.com/zyliu0/deck-mason
 ```
 
 Install from the direct skill path:
 
 ```bash
-npx skills add https://github.com/zyliu0/deck-gen-pro/tree/main/skills/deck-gen-pro
+npx skills add https://github.com/zyliu0/deck-mason/tree/main/skills/deck-mason
 ```
 
 Install non-interactively for a specific agent:
 
 ```bash
-npx skills add https://github.com/zyliu0/deck-gen-pro --skill deck-gen-pro --agent universal -y
+npx skills add https://github.com/zyliu0/deck-mason --skill deck-mason --agent universal -y
 ```
 
 Install globally:
 
 ```bash
-npx skills add https://github.com/zyliu0/deck-gen-pro --skill deck-gen-pro --agent universal --global -y
+npx skills add https://github.com/zyliu0/deck-mason --skill deck-mason --agent universal --global -y
 ```
 
 List the skills exposed by this repository:
 
 ```bash
-npx skills add https://github.com/zyliu0/deck-gen-pro --list
+npx skills add https://github.com/zyliu0/deck-mason --list
 ```
 
 ## Usage
@@ -60,14 +60,14 @@ npx skills add https://github.com/zyliu0/deck-gen-pro --list
 Ask your coding agent to use the skill:
 
 ```text
-Use deck-gen-pro to create a board update deck for our Q2 operating review.
+Use deck-mason to create a board update deck for our Q2 operating review.
 ```
 
 The first response should not be slides. It should be a plan-mode brief that restates the goal, names the staged workflow, identifies what the agent needs to inspect first, and asks for approval before creating files, researching, generating references, or building slides.
 
 ## How It Works
 
-Deck Gen Pro keeps the LLM in project-builder mode. The seven stages create enough friction to protect quality without turning the workflow into a rigid template.
+DeckMason keeps the LLM in project-builder mode. The seven stages create enough friction to protect quality without turning the workflow into a rigid template.
 
 | Phase | What Happens | User Checkpoint |
 |---|---|---|
@@ -84,7 +84,7 @@ Deck Gen Pro keeps the LLM in project-builder mode. The seven stages create enou
 The helper script creates the markdown files used to keep the process inspectable:
 
 ```bash
-python3 skills/deck-gen-pro/scripts/init_deck_workspace.py "AI platform investor deck" --root outputs
+python3 skills/deck-mason/scripts/init_deck_workspace.py "AI platform investor deck" --root outputs
 ```
 
 Generated workspace:
@@ -108,7 +108,7 @@ output/
 
 ## Included Style Territories
 
-Deck Gen Pro includes a starter library of style territories for the visual interview stage. They are prompts for judgment, not fixed templates:
+DeckMason includes a starter library of style territories for the visual interview stage. They are prompts for judgment, not fixed templates:
 
 | Style | Best for |
 |---|---|
@@ -126,10 +126,10 @@ Deck Gen Pro includes a starter library of style territories for the visual inte
 ## Repository Layout
 
 ```text
-deck-gen-pro/
+deck-mason/
 ├── README.md
 └── skills/
-    └── deck-gen-pro/
+    └── deck-mason/
         ├── SKILL.md
         ├── references/
         │   ├── production-quality-gates.md
@@ -140,20 +140,20 @@ deck-gen-pro/
             └── init_deck_workspace.py
 ```
 
-The installable skill is `skills/deck-gen-pro/`.
+The installable skill is `skills/deck-mason/`.
 
 ## Verification
 
 Check the helper script:
 
 ```bash
-python3 -m py_compile skills/deck-gen-pro/scripts/init_deck_workspace.py
+python3 -m py_compile skills/deck-mason/scripts/init_deck_workspace.py
 ```
 
 Create a sample workspace:
 
 ```bash
-python3 skills/deck-gen-pro/scripts/init_deck_workspace.py "sample deck" --root /tmp/deck-gen-pro-test
+python3 skills/deck-mason/scripts/init_deck_workspace.py "sample deck" --root /tmp/deck-mason-test
 ```
 
 Check that the `skills` CLI can discover the package:
