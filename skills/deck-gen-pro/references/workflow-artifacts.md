@@ -65,6 +65,14 @@ Recommended sections:
 - Required sections, chapters, or narrative beats:
 - Source deck/template rules:
 
+## Brand Identity Assets
+- Approved logo, wordmark, or mark assets:
+- Generated or mockup brand visuals that are not official identity assets:
+- Typography direction:
+- Known local font availability:
+- Font fallback risks:
+- Open logo or font questions:
+
 ## Missing Material
 | Need | Why it matters | How to obtain |
 |---|---|---|
@@ -155,9 +163,12 @@ Recommended sections:
 ## Design System
 - Palette logic:
 - Typography:
+- Production font roles:
+- Font availability and fallback policy:
 - Layout grammar:
 - Chart/diagram style:
 - Image treatment:
+- Logo, wordmark, and recurring mark treatment:
 - Accent rules:
 
 ## Practical Layout Rules
@@ -181,6 +192,9 @@ Recommended sections:
 - CJK or multilingual risks:
 - Baseline/overflow risks:
 - Hierarchy adjustments:
+- Brand/title font role:
+- Body/UI/technical font role:
+- Fallback disclosure:
 
 ## Text Economy Rules
 - On-slide copy limit principles:
@@ -192,6 +206,7 @@ Recommended sections:
 - When to use cover:
 - When to use contain:
 - When to use a designed frame:
+- How official brand assets differ from mockups or generated visuals:
 - How captions align to images/cards:
 - Where captions should not appear:
 - How blank space should be handled:
@@ -275,6 +290,7 @@ For every slide:
   - Card/proof-object handling:
   - Image fit behavior:
   - Text fit risk:
+  - Brand/logo/font handling:
 - Text hierarchy:
   - Title:
   - Primary copy:
@@ -286,8 +302,9 @@ For every slide:
 - Visual assets:
   - [asset_id or needed asset]
 - Image assignment:
-- Visual role: [common roles include proof, mood, metaphor, texture, category context, generated, none, or custom]
-- Fit behavior: [cover/contain/designed frame/none/other aspect-ratio-safe treatment]
+  - Visual role: [common roles include proof, mood, metaphor, texture, category context, generated, none, or custom]
+  - Fit behavior: [cover/contain/designed frame/none/other aspect-ratio-safe treatment]
+  - Brand role: [official identity asset/approved mockup/generated mood visual/not applicable]
   - Crop/framing:
   - Multiple-image grid rules:
   - Why image use or restraint is intentional:
@@ -336,8 +353,8 @@ Recommended format:
 ```markdown
 # Asset Manifest
 
-| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fit behavior | Fallback |
-|---|---|---|---|---|---|---|---|---|
+| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fit behavior | Brand role | Fallback |
+|---|---|---|---|---|---|---|---|---|---|
 ```
 
 Rules:
@@ -346,6 +363,7 @@ Rules:
 - Separate downloaded, generated, screenshot, and user-provided assets.
 - Keep generated image prompts near the asset entry or in a linked prompt file.
 - Distinguish proof assets from mood, metaphor, texture, category-context, and generated assets.
+- Distinguish official logo/wordmark/mark assets from generated mockups, screenshots, or decorative brand motifs.
 - Record whether each visual should use cover, contain, a designed frame, or remain undecided until composition.
 - Mark any asset that is not approved or has unclear usage.
 
@@ -360,6 +378,9 @@ Include:
 - slide source mapping
 - source constraints applied
 - fonts and fallbacks
+- brand identity asset usage
+- recurring logo, mark, or wordmark handling
+- typography role decisions
 - image placement decisions
 - text fit decisions
 - asset processing notes
@@ -374,6 +395,7 @@ Include:
 
 - preview/contact sheet paths
 - source constraint QA
+- brand identity QA
 - factual QA notes
 - deck-level visual balance QA
 - visual QA notes
@@ -382,6 +404,8 @@ Include:
 - final file check
 - spacing, padding, and margin consistency checks
 - typography behavior checks
+- font fallback checks
+- logo, wordmark, and recurring mark checks
 - image crop and caption relationship checks
 - image assignment QA
 - generated images are not treated as factual proof
@@ -414,6 +438,15 @@ Source and production QA should ask:
 - Forbidden content absent:
 - Required sections preserved:
 - Source deck/template rules followed:
+
+## Brand Identity QA
+
+- Official logo, wordmark, and mark assets used where identity is needed:
+- Generated/mockup visuals are not treated as official identity assets:
+- Recurring header or chapter marks are consistent:
+- Wordmarks are not retyped or rebuilt without approval:
+- Typography follows approved roles or documented fallback:
+- Title, chapter, and brand-system slides inspected:
 
 ## Image Distortion QA
 

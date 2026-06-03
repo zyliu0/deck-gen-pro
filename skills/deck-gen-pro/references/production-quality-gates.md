@@ -7,6 +7,7 @@ Use this reference before building, revising, or handing off a deck. These are j
 - Never stretch an image. Preserve the source aspect ratio. Crop, contain, or redesign the frame instead.
 - Do not use automatic text shrinking as the main solution. Shorten the visible text, adjust hierarchy, or change the layout so text fits naturally.
 - Record project-specific constraints from the user, such as approved asset folders, rejected assets, forbidden phrases, required chapters, brand rules, or source decks. Keep those constraints in the project artifacts; do not bake them into the universal skill.
+- Protect logos, wordmarks, marks, and type direction as brand decisions. Use approved assets and documented fonts/fallbacks instead of approximating identity elements during production.
 - Package checks are not visual QA. A deck can open, contain media, and pass archive validation while still having distorted images, overflowing text, awkward crops, or unreadable captions.
 
 ## Source Constraint Check
@@ -18,8 +19,27 @@ Before production, confirm the material base:
 - forbidden phrases, claims, chapters, or imagery are absent
 - required chapters, sections, or narrative beats remain present
 - factual claims still point to source material
+- official brand assets and typography expectations are identified when identity matters
 
 Write these constraints in the material audit, build notes, and QA notes so another agent can inspect them later.
+
+## Brand Identity Workflow
+
+Before production, identify the source of truth for identity elements:
+
+- official logo, wordmark, mark, and lockup assets
+- approved mockups or generated visuals that may show the brand but are not identity masters
+- intended typography roles, such as brand/title, body, caption, UI, technical, or annotation text
+- local font availability and acceptable fallback behavior
+- places where identity recurs, such as cover, headers, chapter dividers, closers, templates, or footers
+
+Production rules:
+
+- Use official or user-approved logo/wordmark/mark files where identity is needed.
+- Do not redraw a brand mark as approximate shapes or retype a wordmark unless the user approves that construction.
+- Do not promote a generated mockup, screenshot, or decorative motif into an official logo source.
+- If a required font is unavailable, document the fallback and preserve the approved type feeling as closely as the output format allows.
+- Keep recurring identity marks consistent across the deck unless the style direction intentionally defines variants.
 
 ## Image Placement Workflow
 
@@ -72,6 +92,7 @@ For every visible text block:
 Do not hand off the deck until these gates pass:
 
 - Source constraints: approved sources used, rejected sources excluded, forbidden content absent, required structure preserved.
+- Brand identity: official identity assets used consistently, mockups not treated as identity masters, and typography roles/fallbacks documented.
 - Image distortion: every rendered image preserves aspect ratio and important content remains visible.
 - Text fit: no clipped titles, overflowing boxes, unreadably small text, captions outside their designed area, or text overlapping visual content.
 - Contact sheet: thumbnail review shows intentional rhythm, no repeated awkward crops, no dense text runs, no missing image-led moments where the story needs them.
@@ -83,6 +104,8 @@ Do not hand off the deck until these gates pass:
 - Do not stretch images to make them fill a shape.
 - Do not solve poor layout by shrinking text until it becomes unreadable.
 - Do not use rejected or outdated assets just because they are easy to find.
+- Do not redraw, retype, or approximate a protected brand identity element because it is convenient.
+- Do not silently replace the approved typography direction with generic defaults.
 - Do not let captions float away from images or collide with image content.
 - Do not treat generated mood imagery as factual evidence.
 - Do not call a deck finished after only checking that the file opens.

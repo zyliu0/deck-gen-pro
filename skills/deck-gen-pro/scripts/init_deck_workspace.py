@@ -92,6 +92,14 @@ def main() -> int:
 - Required sections, chapters, or narrative beats:
 - Source deck/template rules:
 
+## Brand Identity Assets
+- Approved logo, wordmark, or mark assets:
+- Generated or mockup brand visuals that are not official identity assets:
+- Typography direction:
+- Known local font availability:
+- Font fallback risks:
+- Open logo or font questions:
+
 ## Missing Material
 | Need | Why it matters | How to obtain |
 |---|---|---|
@@ -162,9 +170,12 @@ next-stage:
 ## Design System
 - Palette logic:
 - Typography:
+- Production font roles:
+- Font availability and fallback policy:
 - Layout grammar:
 - Chart/diagram style:
 - Image treatment:
+- Logo, wordmark, and recurring mark treatment:
 - Accent rules:
 
 ## Practical Layout Rules
@@ -188,6 +199,9 @@ next-stage:
 - CJK or multilingual risks:
 - Baseline/overflow risks:
 - Hierarchy adjustments:
+- Brand/title font role:
+- Body/UI/technical font role:
+- Fallback disclosure:
 
 ## Text Economy Rules
 - On-slide copy limit principles:
@@ -199,6 +213,7 @@ next-stage:
 - When to use cover:
 - When to use contain:
 - When to use a designed frame:
+- How official brand assets differ from mockups or generated visuals:
 - How captions align to images/cards:
 - Where captions should not appear:
 - How blank space should be handled:
@@ -266,6 +281,7 @@ next-stage:
   - Card/proof-object handling:
   - Image fit behavior:
   - Text fit risk:
+  - Brand/logo/font handling:
 - Text hierarchy:
   - Title:
   - Primary copy:
@@ -279,6 +295,7 @@ next-stage:
 - Image assignment:
   - Visual role:
   - Fit behavior:
+  - Brand role:
   - Crop/framing:
   - Multiple-image grid rules:
   - Why image use or restraint is intentional:
@@ -313,8 +330,8 @@ next-stage:
         workspace / "assets" / "asset-manifest.md",
         """# Asset Manifest
 
-| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fit behavior | Fallback |
-|---|---|---|---|---|---|---|---|---|
+| asset_id | Type | Path/URL | Source/provenance | Quality | Intended slides | Visual role | Fit behavior | Brand role | Fallback |
+|---|---|---|---|---|---|---|---|---|---|
 """,
     )
 
@@ -331,6 +348,12 @@ next-stage:
 ## Source Constraints Applied
 
 ## Fonts And Fallbacks
+
+## Brand Identity Asset Usage
+
+## Recurring Logo, Mark, Or Wordmark Handling
+
+## Typography Role Decisions
 
 ## Image Placement Decisions
 
@@ -358,6 +381,15 @@ next-stage:
 - Required sections preserved:
 - Source deck/template rules followed:
 
+## Brand Identity QA
+
+- Official logo, wordmark, and mark assets used where identity is needed:
+- Generated/mockup visuals are not treated as official identity assets:
+- Recurring header or chapter marks are consistent:
+- Wordmarks are not retyped or rebuilt without approval:
+- Typography follows approved roles or documented fallback:
+- Title, chapter, and brand-system slides inspected:
+
 ## Factual QA
 
 ## Deck-Level Visual Balance QA
@@ -376,6 +408,8 @@ next-stage:
 - Text overlap, overflow, and wrapping checks:
 - Spacing, padding, and margin consistency checks:
 - Typography behavior checks:
+- Font fallback checks:
+- Logo, wordmark, and recurring mark checks:
 - Image crop and caption relationship checks:
 
 ## Final File Check
