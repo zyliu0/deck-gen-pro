@@ -1,6 +1,6 @@
-# DeckMason
+# Deck Mason
 
-DeckMason is a PowerPoint builder skill for making product-grade presentation decks with an LLM. It slows the process down so a deck feels like a real project: brief, evidence, style direction, structure, assets, build, and visual QA.
+Deck Mason is a PowerPoint builder skill for making product-grade presentation decks with an LLM. It slows the process down so a deck feels like a real project: brief, evidence, style direction, structure, assets, build, and visual QA.
 
 Instead of jumping straight into slides, the skill guides the agent through seven project stages and asks for human approval at the moments where direction, evidence, or design judgment can change the outcome.
 
@@ -67,7 +67,7 @@ The first response should not be slides. It should be a plan-mode brief that res
 
 ## How It Works
 
-DeckMason keeps the LLM in project-builder mode. The seven stages create enough friction to protect quality without turning the workflow into a rigid template.
+Deck Mason keeps the LLM in project-builder mode. The seven stages create enough friction to protect quality without turning the workflow into a rigid template.
 
 | Phase | What Happens | User Checkpoint |
 |---|---|---|
@@ -108,7 +108,7 @@ output/
 
 ## Included Style Territories
 
-DeckMason includes a starter library of style territories for the visual interview stage. They are prompts for judgment, not fixed templates:
+Deck Mason includes a starter library of style territories for the visual interview stage. They are prompts for judgment, not fixed templates:
 
 | Style | Best for |
 |---|---|
